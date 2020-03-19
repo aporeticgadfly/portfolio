@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+const path = require('path');
 
 const withAuth = require('./middleware');
 
@@ -20,7 +21,7 @@ var authenticated = false;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "client/build")));
 app.use(cors({
   origin: "http://localhost:3000",
   credentials: true
