@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "client/build")));
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "https://protected-forest-85499.herokuapp.com",
   credentials: true
 }));
 app.use(cookieParser());
