@@ -144,5 +144,5 @@ app.post('/compose', withAuth, function(req, res) {
 });
 
 app.listen(process.env.PORT, function() {
-  console.log("Server started on port 5000");
+  console.log("Server started on port 5002");
 });
