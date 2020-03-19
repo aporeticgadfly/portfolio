@@ -70,7 +70,7 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    axios.get('/projects')
+    axios.get('https://protected-forest-85499.herokuapp.com"/projectss')
     .then(
       res => {
         this.setState({proj: this.state.proj.concat(res.data)});

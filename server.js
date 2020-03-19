@@ -45,11 +45,19 @@ const contactSchema = {
 const Project = mongoose.model("Project", projectSchema);
 const Contact = mongoose.model("Contact", contactSchema);
 
-app.get("/home", function(req, res){
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
+app.get("/home", function(req, res) {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-app.get("/projects", function(req, res){
+app.get("/projects", function(req, res) {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
+/*app.get("/home", function(req, res){
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
+});*/
+
+app.get("/projectss", function(req, res){
   var projArr = [];
   Project.find({}, function(err, projects) {
     if(err){
@@ -76,7 +84,7 @@ app.get("/projects", function(req, res){
 });
 
 
-app.get("/posts/:postId", function(req, res){
+app.get("/postss/:postId", function(req, res){
 
 const requestedProjectId = req.params.projectId;
 
@@ -141,10 +149,6 @@ app.post('/compose', withAuth, function(req, res) {
       res.redirect("/compose");
     }
   })
-});
-
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 app.listen(process.env.PORT, function() {
