@@ -49,6 +49,10 @@ app.get("/home", function(req, res) {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
+app.get("/test", function(req, res) {
+  res.send({express: "hello world!"});
+});
+
 app.get("/projects", function(req, res) {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
