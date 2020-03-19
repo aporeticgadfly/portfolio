@@ -4,6 +4,7 @@
 .attribution {
   margin-top: 2vh;
 }
+
 .none {
   font-size: 0;
 }
@@ -791,6 +792,10 @@ form, form > * {
 @media (max-width:600px) {
   .prj {
     grid-template-columns: 1fr;
+  }
+
+  .attribution {
+    font-size: 1rem;
   }
 
   .searchbar::placeholder {
