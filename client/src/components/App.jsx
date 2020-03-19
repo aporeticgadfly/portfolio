@@ -60,16 +60,16 @@ class App extends React.Component {
     const transport = axios.create({
       withCredentials: true,
       headers : {
-        "Access-Control-Allow-Origin": "http://localhost:5000"
+        "Access-Control-Allow-Origin": "http://localhost:5002"
       }
     });
 
-    transport.post('http://localhost:5000/authenticate', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
+    transport.post('http://localhost:5002/authenticate', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
     /*window.location.href = "http://localhost:3000/compose";*/
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/projects')
+    axios.get('http://localhost:5002/projects')
     .then(
       res => {
         this.setState({proj: this.state.proj.concat(res.data)});

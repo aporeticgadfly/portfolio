@@ -22,10 +22,10 @@ class Compose extends React.Component {
     const transport = axios.create({
       withCredentials: true,
       headers : {
-        "Access-Control-Allow-Origin": "http://localhost:5000"
+        "Access-Control-Allow-Origin": "http://localhost:5002"
       }
     });
-    transport.get('http://localhost:5000/compose').then(res => this.setState({authenticateRequest: res.data.authenticateRequest})).catch(err => console.log(err));
+    transport.get('http://localhost:5002/compose').then(res => this.setState({authenticateRequest: res.data.authenticateRequest})).catch(err => console.log(err));
   }
 
   onChangeTitle(event, e) {
@@ -76,11 +76,11 @@ class Compose extends React.Component {
     const transport = axios.create({
       withCredentials: true,
       headers : {
-        "Access-Control-Allow-Origin": "http://localhost:5000"
+        "Access-Control-Allow-Origin": "http://localhost:5002"
       }
     });
 
-    transport.post('http://localhost:5000/compose', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
+    transport.post('http://localhost:5002/compose', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
   }
 
   /*createCodeForms(num) {
