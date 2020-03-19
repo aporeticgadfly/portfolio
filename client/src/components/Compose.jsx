@@ -22,7 +22,7 @@ class Compose extends React.Component {
     const transport = axios.create({
       withCredentials: true,
       headers : {
-        "Access-Control-Allow-Origin": "http://localhost:5002"
+        "Access-Control-Allow-Origin": "http://localhost:5000"
       }
     });
     transport.get('http://localhost:5002/compose').then(res => this.setState({authenticateRequest: res.data.authenticateRequest})).catch(err => console.log(err));
@@ -76,7 +76,7 @@ class Compose extends React.Component {
     const transport = axios.create({
       withCredentials: true,
       headers : {
-        "Access-Control-Allow-Origin": "http://localhost:5002"
+        "Access-Control-Allow-Origin": "http://localhost:5000"
       }
     });
 

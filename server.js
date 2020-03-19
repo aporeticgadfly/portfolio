@@ -50,7 +50,7 @@ app.get("*", function(req, res) {
 });
 
 app.get("/home", function(req, res){
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
 });
 
 app.get("/projects", function(req, res){
