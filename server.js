@@ -82,8 +82,7 @@ app.get("/projectss", function(req, res){
         console.log(projArr);
       }
     }
-    res.render(projArr);
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+    res.send(projArr);
   });
 });
 
