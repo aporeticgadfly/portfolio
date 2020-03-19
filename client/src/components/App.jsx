@@ -100,7 +100,7 @@ class App extends React.Component {
             <Proj
               key = {this.state.proj[proj]._id}
               id = {this.state.proj[proj]._id}
-              image = {this.state.proj[proj].imageUrls[0]}
+              //image = {this.state.proj[proj].imageUrls[0]}
               title = {this.state.proj[proj].title}
               description = {this.state.proj[proj].desc}
               projectClick = {this.projectClick}
