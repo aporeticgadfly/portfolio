@@ -58,13 +58,10 @@ class App extends React.Component {
     };
 
     const transport = axios.create({
-      withCredentials: true,
-      headers : {
-        "Access-Control-Allow-Origin": "http://localhost:5000"
-      }
+      withCredentials: true
     });
 
-    transport.post('http://localhost:5002/authenticate', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
+    transport.post('https://protected-forest-85499.herokuapp.com/authenticate', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
     /*window.location.href = "http://localhost:3000/compose";*/
   }
 
@@ -95,7 +92,7 @@ class App extends React.Component {
             <Proj
               key = {this.state.proj[proj]._id}
               id = {this.state.proj[proj]._id}
-              //image = {this.state.proj[proj].imageUrls[0]}
+              image = {this.state.proj[proj].imageUrls[0]}
               title = {this.state.proj[proj].title}
               description = {this.state.proj[proj].desc}
               projectClick = {this.projectClick}

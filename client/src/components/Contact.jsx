@@ -27,14 +27,7 @@ class Contact extends React.Component {
       msg: this.state.msg
     };
 
-    const transport = axios.create({
-      withCredentials: true,
-      headers : {
-        "Access-Control-Allow-Origin": "http://localhost:5000"
-      }
-    });
-
-    transport.post('http://localhost:5002/home', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
+    axios.post('https://protected-forest-85499.herokuapp.com/home', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
     /*window.location.href = "http://localhost:3000/compose";*/
   }
 

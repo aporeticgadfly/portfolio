@@ -19,13 +19,12 @@ class Compose extends React.Component {
 
   componentDidMount() {
     window.arr=[];
+
     const transport = axios.create({
-      withCredentials: true,
-      headers : {
-        "Access-Control-Allow-Origin": "http://localhost:5000"
-      }
+      withCredentials: true
     });
-    transport.get('http://localhost:5002/compose').then(res => this.setState({authenticateRequest: res.data.authenticateRequest})).catch(err => console.log(err));
+
+    transport.get('https://protected-forest-85499.herokuapp.com/composes').then(res => this.setState({authenticateRequest: res.data.authenticateRequest})).catch(err => console.log(err));
   }
 
   onChangeTitle(event, e) {
@@ -74,13 +73,10 @@ class Compose extends React.Component {
     };
 
     const transport = axios.create({
-      withCredentials: true,
-      headers : {
-        "Access-Control-Allow-Origin": "http://localhost:5000"
-      }
+      withCredentials: true
     });
 
-    transport.post('http://localhost:5002/compose', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
+    transport.post('https://protected-forest-85499.herokuapp.com/compose', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
   }
 
   /*createCodeForms(num) {
