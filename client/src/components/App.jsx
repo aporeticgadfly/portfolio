@@ -69,14 +69,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const transport = axios.create({
-      withCredentials: true,
-      headers : {
-        "Access-Control-Allow-Origin": "http://localhost:5000"
-      }
-    });
 
-    transport.get('https://protected-forest-85499.herokuapp.com/projects')
+    axios.get('/projects')
     .then(
       res => {
         this.setState({proj: this.state.proj.concat(res.data)});
@@ -84,7 +78,8 @@ class App extends React.Component {
           this.setState({projectsList: this.state.projectsList.concat(z + 1)}, () => {
 
           });
-
+          console.log(res.data);
+          console.log(this.state.proj);
       }
       })
       .catch(

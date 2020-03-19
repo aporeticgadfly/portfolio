@@ -45,10 +45,6 @@ const contactSchema = {
 const Project = mongoose.model("Project", projectSchema);
 const Contact = mongoose.model("Contact", contactSchema);
 
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
-
 app.get("/home", function(req, res){
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
 });
@@ -144,6 +140,10 @@ app.post('/compose', withAuth, function(req, res) {
       res.redirect("/compose");
     }
   })
+});
+
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 app.listen(process.env.PORT, function() {
