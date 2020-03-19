@@ -23,6 +23,7 @@
       ? (module.exports = factory())
       : factory()
 })(function () {
+  // eslint-disable-next-line
   ('use strict') // eslint-disable-line no-unused-expressions
 
   /* globals window:true */
