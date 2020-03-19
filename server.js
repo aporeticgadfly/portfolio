@@ -47,6 +47,7 @@ const Contact = mongoose.model("Contact", contactSchema);
 
 app.get("/home", function(req, res){
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
 app.get("/projects", function(req, res){
