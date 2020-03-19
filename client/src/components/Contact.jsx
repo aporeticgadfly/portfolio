@@ -27,7 +27,7 @@ class Contact extends React.Component {
       msg: this.state.msg
     };
 
-    axios.post('https://protected-forest-85499.herokuapp.com/home', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
+    axios.post('https://santiagoorellana.herokuapp.com/home', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
     /*window.location.href = "http://localhost:3000/compose";*/
   }
 

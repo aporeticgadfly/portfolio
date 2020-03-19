@@ -61,13 +61,13 @@ class App extends React.Component {
       withCredentials: true
     });
 
-    transport.post('https://protected-forest-85499.herokuapp.com/authenticate', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
+    transport.post('https://santiagoorellana.herokuapp.com/authenticate', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
     /*window.location.href = "http://localhost:3000/compose";*/
   }
 
   componentDidMount() {
 
-    axios.get('https://protected-forest-85499.herokuapp.com/projectss')
+    axios.get('https://santiagoorellana.herokuapp.com/projectss')
     .then(
       res => {
         this.setState({proj: this.state.proj.concat(res.data)});
