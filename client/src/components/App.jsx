@@ -76,7 +76,7 @@ class App extends React.Component {
       }
     });
 
-    transport.get('http://localhost:5002/projects')
+    transport.get('https://protected-forest-85499.herokuapp.com/projects')
     .then(
       res => {
         this.setState({proj: this.state.proj.concat(res.data)});
