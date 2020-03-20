@@ -150,7 +150,7 @@ class App extends React.Component {
             <h2>Projects</h2>
             <nav className="prjnv">
               <a className="init" href="home#home"><button className="prjnvbtn homeb" ><p>HOME</p></button></a>
-              <a href="about#about"><button className="prjnvbtn aboutb" ><p>ABOUT</p></button></a>
+              <a href="home#about"><button className="prjnvbtn aboutb" ><p>ABOUT</p></button></a>
               <a href="home#testimonials"><button className="prjnvbtn testb" ><p>TESTIMONIALS</p></button></a>
               <a href="home#contact"><button className="prjnvbtn contactb" ><p>CONTACT</p></button></a>
             </nav>
