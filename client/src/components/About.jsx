@@ -113,10 +113,10 @@ class About extends React.Component {
     return (
       <div>
         <nav className="flex-column">
-          <a href="#home"><button className="navbtns hmbtn" >HOME</button></a>
-          <a href="#about"><button className="navbtns abtbtn" >ABOUT</button></a>
-          <a href="#testimonials"><button className="navbtns tstbtn" >TESTIMONIALS</button></a>
-          <a href="#contact"><button className="navbtns cntctbtn" >CONTACT</button></a>
+          <a href="/home#home"><button className="navbtns hmbtn" >HOME</button></a>
+          <a href="/home#about"><button className="navbtns abtbtn" >ABOUT</button></a>
+          <a href="/home#testimonials"><button className="navbtns tstbtn" >TESTIMONIALS</button></a>
+          <a href="/home#contact"><button className="navbtns cntctbtn" >CONTACT</button></a>
           <a href="/projects"><button className="navbtns prtbtn" >PORTFOLIO</button></a>
           <div className="dropdown">
             <button className="dropbtn"><i className="fas fa-bars"></i></button>
