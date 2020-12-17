@@ -11,7 +11,7 @@ const path = require('path');
 
 const withAuth = require('./middleware');
 
-const username = 'admin';
+const username = 'admin';                                 //edit
 const password = '90337426252-Shamballa';
 const secret = 'admvsofvnwoienf';
 
