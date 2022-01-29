@@ -20,8 +20,18 @@ hr {
   margin-right: 45vw;
 }
 
-html, body {
+body {
   width: 100vw;
+  overflow-x:hidden;
+}
+
+button {
+  display: inline;
+  overflow: hidden;
+  text-align: center;
+}
+
+.full {
 }
 
 /* Title Styles */
@@ -83,6 +93,16 @@ html, body {
    }
  }
 
+ @keyframes fadeIn {
+   from {
+     opacity: 0;
+   }
+
+   to {
+     opacity: 1;
+   }
+ }
+
 nav * {
   border: none;
   width: 20%;
@@ -92,6 +112,7 @@ nav {
   position: relative;
   width:100vw;
   z-index:10;
+  height:5vh;
 }
 
 .dropdown {
@@ -114,8 +135,12 @@ nav {
 /* The progress bar (scroll indicator) */
 .progress-bar {
   height: 1vh;
-  background: #8A8D8F;
+  background-color: #5eb3ce;
   width: 0%;
+}
+
+.coloured {
+  color: #5eb3ce !important;
 }
 
 .fixed-header {
@@ -124,16 +149,19 @@ nav {
 }
 
 nav button {
-  height: 3rem;
+  height: 5vh;
   background-color: black;
   color: white;
+  font-weight: bold;
+  font-family: 'Helvetica', serif;
 }
 
 
 /* About Styles */
 .aboutDiv {
-  height: 200vh;
+  height: 285vh;
   width: 100%;
+  display: inline;
 }
 
   #about {
@@ -183,6 +211,65 @@ nav button {
         width: 100%;
       }
 
+  .linkedin {
+    height:85vh;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    column-gap: 10vw;
+  }
+
+    .left {
+      width: 33vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 3vh;
+    }
+
+      .me {
+        width:33vw;
+        height:50vh;
+      }
+
+    .right {
+      width: 33vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      row-gap: 5vh;
+    }
+
+    .workexp * {
+      display: none;
+    }
+
+    .accolades * {
+      display: none;
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-60px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .added {
+      animation: slideDown 1s;
+      display: flex;
+    }
+
 @media (max-width: 900px) {
 
   .description p {
@@ -198,7 +285,7 @@ nav button {
 }
 
   .aboutservices {
-    background-color: #050505;
+    background-color: #000000;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -244,7 +331,7 @@ nav button {
         flex-direction: row;
         align-items: center;
         width: 96%;
-        background-color: black;
+        background-color: #000000;
         height:3vh;
         margin: 0;
         border-radius: 5px;
@@ -372,7 +459,7 @@ nav button {
     }
 
       .ftbtn {
-        background-color: black;
+        background-color: #000000;
         color: white;
         border: thin solid white;
         border-radius: 5px 0px 0px 5px;
@@ -490,6 +577,7 @@ nav button {
   .glider-dots {
     height: 6vh;
   }
+
 /* Contact Styles */
 *,
 *::after,
@@ -511,8 +599,7 @@ form, form > * {
 }
 
 .contact {
-  height:96vh;
-  background-color: #050505;
+  background-color: #000000;
 }
 
   #contact {
@@ -553,7 +640,7 @@ form, form > * {
       grid-column-start: 2;
       background-color: white;
       border-radius:8px;
-      display: flex;
+      display: inline-flex;
       flex-direction: column;
       align-items: center;
       margin-left: 10%;
@@ -573,13 +660,11 @@ form, form > * {
         border: 0;
         border-radius: 0.5rem;
         color: white;
-        background-color: black;
+        background-color: #000000;
         cursor: pointer;
-        display: block;
         text-align: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0;
         outline: 0;
-        padding: 1.5rem 1rem;
         width: 50%;
         transition: .3s linear;
         margin-right: auto;
@@ -587,30 +672,36 @@ form, form > * {
       }
 
       .in {
-        height: 13vh;
+        height: 15%;
         width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
       }
 
         #email {
-          height: 5vh;
-          margin-top: 5vh;
-          margin-bottom: 3vh;
+          height: 85%;
+          margin-top: auto;
+          margin-bottom: auto;
           width: 80%;
-          margin-left: 10%;
-          margin-right: 10%;
         }
 
       .ta {
-        height: 25vh;
+        height: 60%;
         width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
       }
 
         #msg {
-          padding-top: 1vh;
-          height: 20vh;
+          padding-top: 2%;
+          height: 85%;
           width: 80%;
-          margin-left: 10%;
-          margin-right: 10%;
+          resize: none;
         }
 
       .form__input {
@@ -618,7 +709,6 @@ form, form > * {
         box-shadow: none;
         border: none;
         background-color: #D3D3D3;
-        margin-bottom: 2rem;
         text-indent: 3% !important;
       }
 
@@ -629,8 +719,71 @@ form, form > * {
       .form__input::placeholder {
       }
 
-      .formerr {
-        display: none;
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+      .isa_error {
+        height:9vh;
+        width:53vw;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 8px;
+        color: #D8000C;
+        background-color: #FFD2D2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 10px;
+      }
+
+      .isa_success {
+        height:9vh;
+        margin-left: auto;
+        margin-right: auto;
+        width:34vw;
+        border-radius: 8px;
+        color: #4F8A10;
+        background-color: #DFF2BF;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 10px;
+      }
+
+      .isa_success i, .isa_error i {
+        font-size:2em;
+      }
+
+      .isa_success p, .isa_error p {
+        text-align: center;
+        vertical-align: center;
+      }
+
+      #modal {
+        width:55vw;
+        margin-left: auto;
+        margin-right: auto;
+        height:20vh;
+        margin-top: 2vh;
+        margin-bottom: 88vh;
+        border-radius: 10px;
+        animation: fadeIn 1.5s;
+        background-color: transparent !important;
+        border: none !important;
+        overflow: hidden !important;
+      }
+
+      .ReactModal__Overlay {
+        background-color: transparent !important;
+      }
+
+      .modalBtn {
+        background-color: transparent;
+        border:none;
+        color: black;
+        align-self: flex-start;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-right: 2vw;
       }
 
 /* Project Page Styles */
@@ -708,7 +861,7 @@ form, form > * {
   }
 
     .fa-search {
-      font-size: 2vh;
+
     }
 
 .prj {
@@ -730,6 +883,14 @@ form, form > * {
     width:91%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .projectCard:hover p, h1 {
+    color: #86c5da;
+  }
+
+  .projectCard:hover p {
+    text-decoration: underline;
   }
 
     .projectCard p, h1 {
@@ -815,6 +976,10 @@ form, form > * {
 
 /* Single Project Page Styles */
 
+.sprojback {
+  background-color: #212121;
+}
+
 .cont {
   width:95%;
   margin-left: 2.5%;
@@ -839,19 +1004,27 @@ form, form > * {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   margin-left: 0rem;
+  color: white;
 }
 
 .backbtn {
-  border: none;
+  border: solid;
+  border-color: white;
   background-color: hsl(0, 0%, 100%);
-  width:7vh;
+  width:8vh;
   padding-top:0.5rem;
   padding-bottom:0.5rem;
   border-radius: 3px;
-  box-shadow: 2px 2px 5px hsl(0, 0%, 80%);
   margin-left: 2.5%;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  color: black;
+}
+
+.backbtn:hover {
+  background-color: #000000;
+  border-color: white;
+  color: white;
 }
 
 
@@ -862,15 +1035,39 @@ form, form > * {
 
 /* Footer Styles */
 .footer {
-  background-color: #050505;
+  background-color: #000000;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 2vh;
+  padding-bottom: 4vh;
 }
 
 footer {
   color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5vw;
+}
+
+footer button {
+  color: transparent;
+  background-color: transparent;
+  border: none;
+}
+
+footer p {
+  margin: 0;
+}
+
+.fa-linkedin {
+  color: white;
+  font-size: 2em;
+}
+
+.fa-linkedin:hover {
+  color: gray;
 }
 
 @media (max-width: 1100px) {
@@ -1017,10 +1214,6 @@ footer {
 
   .btndv {
     width: 100%;
-  }
-
-  .testimonials {
-    height: 100vh;
   }
 
   .vrtitm {

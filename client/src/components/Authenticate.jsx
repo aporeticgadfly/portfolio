@@ -1,7 +1,6 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-//post credentials to server to authenticate, then redirect to compose, where get will now function
 
 class Authenticate extends React.Component {
 

@@ -2,12 +2,12 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from 'axios';
+import configData from '../config.json';
 
 class Compose extends React.Component {
   constructor(props) {
     super(props);
     this.state = {authenticateRequest: false, numCode: [0, 1, 2], title: '', desc: '', link: '', count: 1, one: []};
-    //this.createCodeForms = this.createCodeForms.bind(this);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDesc = this.onChangeDesc.bind(this);
     this.onChangeLink = this.onChangeLink.bind(this);
@@ -24,7 +24,7 @@ class Compose extends React.Component {
       withCredentials: true
     });
 
-    transport.get('https://santiagoorellana.herokuapp.com/composes').then(res => this.setState({authenticateRequest: res.data.authenticateRequest})).catch(err => console.log(err));
+    transport.get(configData.SERVER_URL + '/composes').then(res => this.setState({authenticateRequest: res.data.authenticateRequest})).catch(err => console.log(err));
   }
 
   onChangeTitle(event, e) {
@@ -76,17 +76,8 @@ class Compose extends React.Component {
       withCredentials: true
     });
 
-    transport.post('https://santiagoorellana.herokuapp.com/compose', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
+    transport.post(configData.SERVER_URL+ '/compose', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
   }
-
-  /*createCodeForms(num) {
-        return (
-          <div>
-            <Form.Control ref='title_${num}' type="text" placeholder="title" />
-            <Form.Control ref='code_${num}' type="text" placeholder="code" />
-          </div>
-      );
-  }*/
 
   render() {
     if(this.state.authenticateRequest === true) {

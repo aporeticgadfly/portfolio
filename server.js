@@ -8,12 +8,17 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const path = require('path');
+const axios = require('axios');
+const nodemailer = require('nodemailer');
+const validator = require('validator');
 
 const withAuth = require('./middleware');
+const forceHttps = require('./forceHttps');
+const hredirect = require('./herokuredirect');
 
-const username = 'admin';                                 //edit
-const password = '90337426252-Shamballa';
-const secret = 'admvsofvnwoienf';
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
+const secret = process.env.SECRET;
 
 const app = express();
 
@@ -21,12 +26,28 @@ var authenticated = false;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "client/build")));
-app.use(cors({
-  origin: "https://santiagoorellana.herokuapp.com",
-  credentials: true
-}));
+if (process.env.NODE_ENV != 'development') {
+  app.use(express.static(path.join(__dirname, "client/build")));
+}
+else {
+  app.use(express.static(path.join(__dirname, "client/public")));
+}
+if (process.env.NODE_ENV != 'development') {
+  app.use(cors({
+    origin: "https://www.santiagoorellana.com",
+    credentials: true
+  }));
+}
+else {
+  app.use(cors({
+    origin: "http://localhost:3000",
+    credentials: true
+  }));
+}
 app.use(cookieParser());
+app.enable('trust proxy');
+app.use(hredirect);
+app.use(forceHttps);
 
 mongoose.connect(process.env.MONGO, {useNewUrlParser: true});
 
@@ -45,31 +66,55 @@ const contactSchema = {
 const Project = mongoose.model("Project", projectSchema);
 const Contact = mongoose.model("Contact", contactSchema);
 
-app.get("/home", function(req, res) {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+let transport = nodemailer.createTransport({
+   host: 'mail.privateemail.com',
+   port: 465,
+   auth: {
+     user: process.env.EMAIL_USERNAME,
+     pass: process.env.EMAIL_PASSWORD
+   }
 });
 
+app.get("/home", function(req, res) {
+  res.sendFile(path.join(__dirname+process.env.SERVE_PATH));
+});
+
+app.get('/linkedin', function(req, res) {
+  res.redirect("https://www.linkedin.com/in/santiago-orellana-67873418b/");
+})
+
 app.get("/projects", function(req, res) {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname+process.env.SERVE_PATH));
 });
 
 app.get("/authenticate", function(req, res) {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname+process.env.SERVE_PATH));
 });
 
 app.get("/compose", function(req, res) {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname+process.env.SERVE_PATH));
 });
+
+app.get("/unsplash", function(req, res) {
+  var key = process.env.UNSPLASH_KEY;
+  var link = 'https://api.unsplash.com/collections/d1m7gMO3M7E/photos/?client_id=' + key;
+
+  axios.get(link)
+    .then(response => {
+      var rand = Math.round(Math.random() * 5);
+      var pkg = {
+        image: response.data[rand].urls.regular,
+        name: response.data[rand].user.name,
+        link: response.data[rand].user.links.html
+      };
+      res.send(pkg);
+    })
+    .catch(err => console.log(err));
+})
 
 app.get("/singleproject", function(req, res) {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname+process.env.SERVE_PATH));
 });
-
-
-
-/*app.get("/home", function(req, res){
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
-});*/
 
 app.get("/projectss", function(req, res){
   var projArr = [];
@@ -78,9 +123,7 @@ app.get("/projectss", function(req, res){
       console.log(err);
     }
     else {
-      console.log(projects);
       for(var i = 0; i < projects.length; i++) {
-          console.log("test");
           projArr.push({
             _id: projects[i]._id,
             title: projects[i].title,
@@ -88,42 +131,55 @@ app.get("/projectss", function(req, res){
             imageUrls: projects[i].imageUrls,
             link: projects[i].link
         });
-        //res.send(projArr);
-        console.log(projArr);
       }
     }
     res.send(projArr);
   });
 });
 
-
-/*app.get("/postss/:postId", function(req, res){
-
-const requestedProjectId = req.params.projectId;
-
-  Project.findOne({_id: requestedProjectId}, function(err, project){
-    res.render("project", {
-      title: req.body.projectTitle,
-      description: req.body.projectDescription,
-      link: req.body.projectLink,
-      code: req.body.projectCode,
-      imageUrls: req.body.projectImageUrls
-    });
-  });
-});*/
-
 app.post("/home", function(req, res) {
-  const contact = new Contact({
-    emailAddress: req.body.email,
-    content: req.body.msg
-  });
+  if(validator.isEmail(req.body.email + '')) {
+    const contact = new Contact({
+      emailAddress: req.body.email,
+      content: req.body.msg
+    });
 
+    contact.save(function(err){
+      if (!err){
+      }
+    });
 
-  contact.save(function(err){
-    if (!err){
-        res.redirect("/home");
-    }
-  });
+    const sent = {
+      from: 'santiago@santiagoorellana.com',
+      to: 'santiago@santiagoorellana.com',
+      subject: 'Node Mailer',
+      text: 'From: ' + req.body.email+ ' Message: ' + req.body.msg
+    };
+
+    const received = {
+      from: 'santiago@santiagoorellana.com',
+      to: req.body.email,
+      subject: 'Node Mailer',
+      text: 'Your message has been received'
+    };
+
+    transport.sendMail(sent, function(err, info) {
+      if (err) {
+        console.log(err)
+        res.status(401).end();
+      }
+    });
+    transport.sendMail(received, function(err, info) {
+      if (err) {
+        console.log(err)
+      }
+    });
+    console.log("fire");
+    res.status(200).end();
+  }
+  else {
+    res.status(400).end();
+  }
 });
 
 app.post('/authenticate', (req, res) => {
@@ -165,5 +221,5 @@ app.post('/compose', withAuth, function(req, res) {
 });
 
 app.listen(process.env.PORT, function() {
-  console.log("Server started on port 5002");
+  console.log("Server started on: "+process.env.PORT);
 });

@@ -1,5 +1,3 @@
-//description of skills, process, technologies used, a little about self
-//discovery, design, development, launch, aftercare
 import React from 'react';
 
 class About extends React.Component {
@@ -9,7 +7,7 @@ class About extends React.Component {
       ftVis: {display: "block"},
       procVis: {display: "none"},
       ftState: {
-        backgroundColor: "black",
+        backgroundColor: "#000000",
         color: "white",
         border: "solid thin white"
       },
@@ -26,16 +24,16 @@ class About extends React.Component {
   }
 
   ftClicked() {
-    this.setState({ftVis: {display: "block"}, procVis: {display: "none"}, ftState: {backgroundColor: "black", color: "white", border: "solid thin white"}, procState: {backgroundColor: "white", color: "black", border: "none"}});
+    this.setState({ftVis: {display: "block"}, procVis: {display: "none"}, ftState: {backgroundColor: "#000000", color: "white", border: "solid thin white"}, procState: {backgroundColor: "white", color: "black", border: "none"}});
   }
 
   procClicked() {
-    this.setState({ftVis: {display: "none"}, procVis: {display: "block"}, ftState: {backgroundColor: "white", color: "black", border: "none"}, procState: {backgroundColor: "black", color: "white", border: "solid thin white"}});
+    this.setState({ftVis: {display: "none"}, procVis: {display: "block"}, ftState: {backgroundColor: "white", color: "black", border: "none"}, procState: {backgroundColor: "#000000", color: "white", border: "solid thin white"}});
   }
 
   componentDidMount() {
 
-    document.querySelector(".aboutDiv").onmouseover = function() {document.querySelector(".abtbtn").style.color = "#8A8D8F";};
+    document.querySelector(".aboutDiv").onmouseover = function() {document.querySelector(".abtbtn").style.color = "#5eb3ce";};
     document.querySelector(".aboutDiv").onmouseout = function() {document.querySelector(".abtbtn").style.color = "white";};
 
     window.onscroll = function() {
@@ -85,39 +83,31 @@ class About extends React.Component {
       }
     });
 
-
-    /*var arr = [100, 100, 95, 90, 90, 90, 90, 85, 65];
-    var countArr = [0,0,0,0,0,0,0,0,0];
-    var countpcArr = [0,0,0,0,0,0,0,0,0];
-    var elArr = [".htmlp", ".cssp", ".jqueryp", ".javascriptp", ".reactp", ".nodep", ".pythonp", ".mongodbp", ".sqlp"];
-    document.querySelector(".aboutservices").onmouseover = function(arr, countArr, countpcArr, elArr) {
-      for(var z=0; z<=100; z++){
-          for(var i=0; i < arr.length; i++) {
-            document.querySelector(elArr[i]).innerHTML(countpcArr[i]);
-            if(countArr[i] < arr[i]) {
-              countArr[i]++;
-            }
-            for(var y = 0; y < countArr.length; y++) {
-              countpcArr[y] = countArr[y] + "%";
-            }
-            console.log(countpcArr);
-          }
-
-        }
-
-    }; */
-
+    let timeArr = [100, 200, 300, 400, 500, 600, 700];
+    let timeArr2 = [800, 900, 1000, 1100, 1200];
+    document.querySelector(".linkedin").onmouseover = function() {
+      for(let i = 0; i < document.querySelector(".workexp").childNodes.length; i++) {
+        setTimeout(function() {
+          document.querySelector(".workexp").childNodes[i].classList.add("added");
+        }, timeArr[i]);
+      }
+      for(let i = 0; i < document.querySelector(".accolades").childNodes.length; i++) {
+        setTimeout(function() {
+          document.querySelector(".accolades").childNodes[i].classList.add("added");
+        }, timeArr2[i]);
+      }
+    }
 }
 
   render() {
     return (
       <div>
         <nav className="flex-column">
-          <a href="#home"><button className="navbtns hmbtn" >HOME</button></a>
-          <a href="#about"><button className="navbtns abtbtn" >ABOUT</button></a>
-          <a href="#testimonials"><button className="navbtns tstbtn" >TESTIMONIALS</button></a>
-          <a href="#contact"><button className="navbtns cntctbtn" >CONTACT</button></a>
-          <a href="/projects"><button className="navbtns prtbtn" >PORTFOLIO</button></a>
+          <a href="#home"><button className="navbtns hmbtn" >Home</button></a>
+          <a href="#about"><button className="navbtns abtbtn" >About</button></a>
+          <a href="#testimonials"><button className="navbtns tstbtn" >Testimonials</button></a>
+          <a href="#contact"><button className="navbtns cntctbtn" >Contact</button></a>
+          <a href="/projects"><button className="navbtns prtbtn" >Portfolio</button></a>
           <div className="dropdown">
             <button className="dropbtn"><i className="fas fa-bars"></i></button>
             <div className="dropdown-content">
@@ -134,7 +124,7 @@ class About extends React.Component {
             </div>
           </div>
           <div className="progress-container">
-            <div className="progress-bar" id="myBar"></div>
+            <div className="progress-bar coloured" id="myBar" ></div>
           </div>
         </nav>
         <div className="aboutDiv">
@@ -142,7 +132,7 @@ class About extends React.Component {
         <h1 className="header aboutheader">About</h1>
         <hr className="abouthr"/>
         <div className="aboutsection">
-          <div className="aboutself">
+          <div className="aboutself full">
             <div className="description" data-aos="fade-left" data-aos-duration="3000">
               <p>I'm a self-taught full-stack web developer from Mississauga, Canada.</p>
               <p>My autodidactic tendencies have led me to study computer technology since I was 13, picking up skills such as pentesting, designing AI, electronics engineering, OS kernel development, and general software development. </p>
@@ -151,7 +141,31 @@ class About extends React.Component {
             </div>
             <div><img alt="" className="gif" src={require("../images/coding.gif")} data-aos="fade-right" data-aos-duration="3000"/></div>
           </div>
-          <div className="aboutservices">
+          <div className="linkedin full">
+            <div className="left">
+              <img alt="" src={require("../images/me.png")} className="me"/>
+              <h4>View LinkedIn page <a >here</a></h4>
+            </div>
+            <div className="right">
+              <div className="workexp">
+                <h2>Work Experience</h2>
+                <h4>Software Engineer at Vodra</h4>
+                <p>React and TypeScript software development for a startup company.</p>
+                <h4>Freelance Software Engineer</h4>
+                <p>Developed dynamic, responsive, scalable web applications for clients and small businesses for two years.</p>
+                <h4>Robotics/Programming Instructor at IRIS</h4>
+                <p>Taught and developed curricula relating to hardware and software engineering principles to people of all ages for two years.</p>
+              </div>
+              <div className="accolades">
+                <h2>Accolades</h2>
+                <h4>Winner of DeltaHacks Medical Engineering Design Award</h4>
+                <p>View project website <a>here.</a></p>
+                <h4>Winner of HackPSUs Best Hardware Hack and AF Award</h4>
+                <p>View devpost <a>here.</a></p>
+              </div>
+            </div>
+          </div>
+          <div className="aboutservices full">
             <div className="skills" data-aos="fade-right" data-aos-duration="3000">
               <h3>Skills and Aptitudes</h3>
               <hr className="sklhr" />
@@ -209,44 +223,44 @@ class About extends React.Component {
               <div className="features" style={this.state.ftVis}>
                 <div className="vrtitm">
                  <i className="fas fa-lock"></i>
-                 <h3>Secure</h3>
+                 <h3 className="coloured">Secure</h3>
                  <p>As a certified CompTIA Pentest+ recipient, I know the ins and outs of cybersecurity. You can rest assured your site will be as hackerproof as possible.</p>
                 </div>
                 <div className="vrtitm">
                   <i className="fas fa-mobile-alt"></i>
-                  <h3>Responsive</h3>
+                  <h3 className="coloured">Responsive</h3>
                   <p>My user interface layouts will morph to the size of the device viewing it, meaning your site will always look presentable.</p>
                 </div>
                 <div className="vrtitm">
                   <i className="fas fa-retweet"></i>
-                  <h3>Dynamic</h3>
+                  <h3 className="coloured">Dynamic</h3>
                   <p>My usage of React and JavaScript allows for a site that changes dynamically according to user input, facilitating smarter user interaction.</p>
                 </div>
                 <div className="vrtitm">
                   <i className="fas fa-tachometer-alt"></i>
-                  <h3>Speedy</h3>
+                  <h3 className="coloured">Speedy</h3>
                   <p>You don't want people viewing your site to experience slow loading times and laggy user interaction.</p>
                 </div>
               </div>
               <div className="process" style={this.state.procVis}>
                 <div className="vrtitm">
                   <i className="fas fa-search"></i>
-                  <h3>Discovery</h3>
+                  <h3 className="coloured">Discovery</h3>
                   <p>First, an interview detailing your vision for your project is done. Drawings and wireframes are drawn up so that your project will end up looking exactly how you want it to.</p>
                 </div>
                 <div className="vrtitm">
                   <i className="fas fa-code"></i>
-                  <h3>Development</h3>
+                  <h3 className="coloured">Development</h3>
                   <p>After taking thorough notes on your needs, you leave me to do the heavy lifting. The length of this phase is dependent on the complexity and scale of the project.</p>
                 </div>
                 <div className="vrtitm">
                   <i className="fas fa-rocket"></i>
-                  <h3>Launch</h3>
+                  <h3 className="coloured">Launch</h3>
                   <p>The finished product is subjected to a thorough series of tests, and then deployed to be indexed by the major search engines. Hosting solutions are discussed beforehand.</p>
                 </div>
                 <div className="vrtitm">
                   <i className="fas fa-briefcase-medical"></i>
-                  <h3>Aftercare</h3>
+                  <h3 className="coloured">Aftercare</h3>
                   <p>Occasionally, your project may need a tuneup, or a technical issue may arise that needs fixing.</p>
                 </div>
               </div>

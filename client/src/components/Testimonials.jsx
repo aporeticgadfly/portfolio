@@ -1,12 +1,10 @@
-//carousel with testimonials
-
 import React from 'react';
 import Glider from "../glider.js"
 
 class Testimonials extends React.Component {
 
   componentDidMount() {
-    document.querySelector(".testimonials").onmouseover = function() {document.querySelector(".tstbtn").style.color = "#8A8D8F";};
+    document.querySelector(".testimonials").onmouseover = function() {document.querySelector(".tstbtn").style.color = "#5eb3ce";};
     document.querySelector(".testimonials").onmouseout = function() {document.querySelector(".tstbtn").style.color = "white";};
 
     window.addEventListener('load', function(){
@@ -24,7 +22,7 @@ class Testimonials extends React.Component {
   render() {
 
     return (
-    <div className = "testimonials">
+    <div className = "testimonials full">
       <a className="none" href="/home#testimonials" id="testimonials">text</a>
       <h1 className = "header testimonialsheader">Testimonials</h1>
       <hr />

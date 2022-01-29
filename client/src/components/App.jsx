@@ -9,6 +9,7 @@ import Testimonials from './Testimonials';
 import Input from './Input';
 import Compose from './Compose';
 import axios from 'axios';
+import configData from '../config.json';
 import {
   Route,
   Link,
@@ -61,13 +62,12 @@ class App extends React.Component {
       withCredentials: true
     });
 
-    transport.post('https://santiagoorellana.herokuapp.com/authenticate', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
-    /*window.location.href = "http://localhost:3000/compose";*/
+    transport.post(configData.SERVER_URL+'/authenticate', formData).then(res => {console.log(res.data)}).catch(err => console.log(err));
   }
 
   componentDidMount() {
 
-    axios.get('https://santiagoorellana.herokuapp.com/projectss')
+    axios.get(configData.SERVER_URL+'/projectss')
     .then(
       res => {
         this.setState({proj: this.state.proj.concat(res.data)});
@@ -75,8 +75,6 @@ class App extends React.Component {
           this.setState({projectsList: this.state.projectsList.concat(z + 1)}, () => {
 
           });
-          console.log(res.data);
-          console.log(this.state.proj);
       }
       })
       .catch(
@@ -119,7 +117,7 @@ class App extends React.Component {
     }
 
     return(
-      <div>
+      <div className="sprojback">
         <Link to="/projects">
           <button className="backbtn"><i  className="fas fa-arrow-left"></i><span>Back</span></button>
         </Link>
@@ -149,10 +147,10 @@ class App extends React.Component {
           <div className="prjttl">
             <h2>Projects</h2>
             <nav className="prjnv">
-              <a className="init" href="home#home"><button className="prjnvbtn homeb" ><p>HOME</p></button></a>
-              <a href="home#about"><button className="prjnvbtn aboutb" ><p>ABOUT</p></button></a>
-              <a href="home#testimonials"><button className="prjnvbtn testb" ><p>TESTIMONIALS</p></button></a>
-              <a href="home#contact"><button className="prjnvbtn contactb" ><p>CONTACT</p></button></a>
+              <a className="init" href="home#home"><button className="prjnvbtn homeb" ><p>Home</p></button></a>
+              <a href="home#about"><button className="prjnvbtn aboutb" ><p>About</p></button></a>
+              <a href="home#testimonials"><button className="prjnvbtn testb" ><p>Testimonials</p></button></a>
+              <a href="home#contact"><button className="prjnvbtn contactb" ><p>Contact</p></button></a>
             </nav>
             <Input handleChange={this.handleChange}/>
             <div className="dropdownp">

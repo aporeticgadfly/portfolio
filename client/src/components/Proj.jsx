@@ -1,7 +1,3 @@
-//front image
-//Title
-//truncated description
-
 import React from 'react';
 class Proj extends React.Component {
 
@@ -21,7 +17,7 @@ class Proj extends React.Component {
 
   render() {
     return (
-      <div onClick={(e) => this.props.projectClick(this.props.id, e)}>
+      <div className="card" onClick={(e) => this.props.projectClick(this.props.id, e)}>
         <img alt=""className="prjimg" src={this.props.image}/>
         <h1>{this.props.title}</h1>
         <p>{this.props.description}</p>
