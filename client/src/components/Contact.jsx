@@ -13,6 +13,7 @@ class Contact extends React.Component {
     this.showModal = this.showModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.linkedin = this.linkedin.bind(this);
+    this.github = this.github.bind(this);
   }
 
   onChangeEmail(event, e) {
@@ -21,6 +22,10 @@ class Contact extends React.Component {
 
   linkedin() {
     window.location.href = "https://www.linkedin.com/in/santiago-orellana-67873418b/";
+  }
+
+  github() {
+    window.location.href = "https://github.com/aptaabye";
   }
 
   onChangeMsg(event, e) {
@@ -126,6 +131,9 @@ class Contact extends React.Component {
             <footer>
               <button onClick={this.linkedin}>
                 <i className="fab fa-linkedin"></i>
+              </button>
+              <button onClick={this.github}>
+                <i class="fab fa-github"></i>
               </button>
               <p>&copy; 2020 Santiago Orellana. All Rights Reserved.</p>
               <p>santiago@santiagoorellana.com</p>

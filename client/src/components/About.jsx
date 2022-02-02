@@ -85,12 +85,7 @@ class About extends React.Component {
 
     let timeArr = [100, 200, 300, 400, 500, 600, 700];
     let timeArr2 = [800, 900, 1000, 1100, 1200];
-    document.querySelector(".linkedin").onmouseover = function() {
-      for(let i = 0; i < document.querySelector(".workexp").childNodes.length; i++) {
-        setTimeout(function() {
-          document.querySelector(".workexp").childNodes[i].classList.add("added");
-        }, timeArr[i]);
-      }
+    document.querySelector(".accolades").onmouseover = function() {
       for(let i = 0; i < document.querySelector(".accolades").childNodes.length; i++) {
         setTimeout(function() {
           document.querySelector(".accolades").childNodes[i].classList.add("added");
@@ -149,6 +144,7 @@ class About extends React.Component {
             <div className="right">
               <div className="workexp">
                 <h2>Work Experience</h2>
+                <hr className="workhr" />
                 <h4>Software Engineer at Vodra</h4>
                 <p>React and TypeScript software development for a startup company.</p>
                 <h4>Freelance Software Engineer</h4>
@@ -156,14 +152,25 @@ class About extends React.Component {
                 <h4>Robotics/Programming Instructor at IRIS</h4>
                 <p>Taught and developed curricula relating to hardware and software engineering principles to people of all ages for two years.</p>
               </div>
-              <div className="accolades">
-                <h2>Accolades</h2>
-                <h4>Winner of DeltaHacks Medical Engineering Design Award</h4>
-                <p>View project website <a>here.</a></p>
-                <h4>Winner of HackPSUs Best Hardware Hack and AF Award</h4>
-                <p>View devpost <a>here.</a></p>
-              </div>
             </div>
+          </div>
+          <div className="accolades full">
+            <h2>Accolades</h2>
+            <hr className="abouthr"/>
+              <div className="accleft">
+                <img />
+                <img />
+              </div>
+              <div className="accright">
+                <h3>Winner of DeltaHacks Medical Engineering Design Award</h3>
+                <p>Competed with 800 others in McMasters DeltaHacks Hackathon and won the Medical Engineering Design award for our entry.</p>
+                <p>View project website <a> here</a> and devpost <a> here.</a></p>
+                <h3>Winner of HackPSUs Best Hardware Hack and AF Award</h3>
+                <p>Competed with over 900 other students from around the world in Penn State University's hackathon.
+                Won not one but two awards for Best Hardware Hack and Audience Favourite.
+                The project in question was an RFID Spoofer capable of emulating PICCs to grant a nefarious actor access to areas restricted by RFID technology.</p>
+                <p>View devpost <a> here.</a></p>
+              </div>
           </div>
           <div className="aboutservices full">
             <div className="skills" data-aos="fade-right" data-aos-duration="3000">
