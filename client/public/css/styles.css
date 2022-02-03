@@ -219,7 +219,7 @@ nav button {
       }
 
   .linkedin {
-    height:85vh;
+    height:100vh;
     background-color: #000000;
     display: flex;
     flex-direction: row;
@@ -229,7 +229,7 @@ nav button {
     column-gap: 10vw;
   }
 
-  .linkedin p, .linkedin h4, .linkedin h2 {
+  .linkedin h2 {
     color: white;
   }
 
@@ -247,22 +247,49 @@ nav button {
         height:50vh;
       }
 
+      .buttonDiv button {
+        background-color: #000000;
+        border: none;
+      }
+
+        .linkedbtn {
+          margin-right: 0.5vw;
+        }
+
     .right {
       width: 33vw;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      row-gap: 5vh;
+      height: 85vh;
+      row-gap: 3vh;
     }
 
-    .workexp * {
+    .right h2 {
+      margin-top: 10vh;
+    }
+
+    .right h3 {
+      color: #5eb3ce;
+      margin-top: 1vh;
+    }
+
+    .workhd {
+      border: solid white;
+      border-radius: 9px;
+      padding-left: 0.5vw;
+      padding-right: 0.5vw;
+    }
+
+    .workhd p {
+      color: white;
     }
 
     .workhr {
       width: 15vw;
       margin: 0;
-      margin-left: 0;
+      margin-bottom: 3vh;
     }
 
     .accolades {
@@ -270,7 +297,7 @@ nav button {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height:85vh;
+      height:100vh;
     }
 
     @keyframes slideDown {
@@ -286,8 +313,8 @@ nav button {
     }
 
     .added {
-      animation: slideDown 1s;
-      display: flex;
+      /*animation: slideDown 1s;
+      display: flex;*/
     }
 
 @media (max-width: 900px) {
@@ -362,7 +389,7 @@ nav button {
           width: 0 !important;
         }
 
-        .transit{
+        .transit {
           width: 100% !important;
         }
 

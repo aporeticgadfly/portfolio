@@ -20,11 +20,21 @@ class About extends React.Component {
     };
     this.ftClicked = this.ftClicked.bind(this);
     this.procClicked = this.procClicked.bind(this);
+    this.linkedin = this.linkedin.bind(this);
+    this.github = this.github.bind(this);
     window.self = this;
   }
 
   ftClicked() {
     this.setState({ftVis: {display: "block"}, procVis: {display: "none"}, ftState: {backgroundColor: "#000000", color: "white", border: "solid thin white"}, procState: {backgroundColor: "white", color: "black", border: "none"}});
+  }
+
+  linkedin() {
+    window.location.href = "https://www.linkedin.com/in/santiago-orellana-67873418b/";
+  }
+
+  github() {
+    window.location.href = "https://github.com/aptaabye";
   }
 
   procClicked() {
@@ -139,17 +149,30 @@ class About extends React.Component {
           <div className="linkedin full">
             <div className="left">
               <img alt="" src={require("../images/me.png")} className="me"/>
-              <h4>View LinkedIn page <a >here</a></h4>
+              <div className="buttonDiv">
+                <button className="linkedbtn" onClick={this.linkedin}>
+                  <i className="fab fa-linkedin"></i>
+                </button>
+                <button onClick={this.github}>
+                  <i class="fab fa-github"></i>
+                </button>
+              </div>
             </div>
             <div className="right">
-              <div className="workexp">
+              <div className="headdv">
                 <h2>Work Experience</h2>
                 <hr className="workhr" />
-                <h4>Software Engineer at Vodra</h4>
+              </div>
+              <div className="workhd">
+                <h3>Software Engineer at Vodra</h3>
                 <p>React and TypeScript software development for a startup company.</p>
-                <h4>Freelance Software Engineer</h4>
+              </div>
+              <div className="workhd">
+                <h3>Freelance Software Engineer</h3>
                 <p>Developed dynamic, responsive, scalable web applications for clients and small businesses for two years.</p>
-                <h4>Robotics/Programming Instructor at IRIS</h4>
+              </div>
+              <div className="workhd">
+                <h3>Robotics/Programming Instructor at IRIS</h3>
                 <p>Taught and developed curricula relating to hardware and software engineering principles to people of all ages for two years.</p>
               </div>
             </div>
