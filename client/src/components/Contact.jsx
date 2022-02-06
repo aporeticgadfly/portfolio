@@ -133,7 +133,7 @@ class Contact extends React.Component {
                 <i className="fab fa-linkedin"></i>
               </button>
               <button onClick={this.github}>
-                <i class="fab fa-github"></i>
+                <i className="fab fa-github"></i>
               </button>
               <p>&copy; 2020 Santiago Orellana. All Rights Reserved.</p>
               <p>santiago@santiagoorellana.com</p>

@@ -48,6 +48,7 @@ button {
   margin: 0;
   text-align: center;
   padding-top: 4rem;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .titletext {
@@ -57,6 +58,7 @@ button {
   width:20vw;
   margin-right:40vw;
   text-align:center;
+  font-family: 'Ubuntu', sans-serif;
  }
 
 .titlebtn {
@@ -205,6 +207,7 @@ nav button {
         flex-direction: column;
         justify-content: center;
         row-gap: 2vh;
+        font-family: 'Arial', sans-serif;
       }
 
         .description p {
@@ -227,6 +230,7 @@ nav button {
     width: 100%;
     justify-content: center;
     column-gap: 10vw;
+    font-family: 'Ubuntu', sans-serif;
   }
 
   .linkedin h2 {
@@ -257,7 +261,7 @@ nav button {
         }
 
     .right {
-      width: 33vw;
+      width: 40vw;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -277,13 +281,50 @@ nav button {
 
     .workhd {
       border: solid white;
-      border-radius: 9px;
+      border-radius: 20px;
       padding-left: 0.5vw;
       padding-right: 0.5vw;
+      width:40vw;
+    }
+
+    .hdr {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .hdr h4 {
+      color: white;
+      font-style: italic;
+      margin-bottom: 2vh;
+    }
+
+    .fa-sort-down {
+      color: white;
+      margin-right: 1vw;
+    }
+
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform:rotate(360deg);
+      }
+    }
+
+    .spin {
+      animation: spin 1s;
     }
 
     .workhd p {
       color: white;
+      margin-left: 1vw;
+      margin-right: 1vw;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .ps {
+      margin-top: 2vh;
+      margin-bottom: 1.5vh;
     }
 
     .workhr {
@@ -298,6 +339,65 @@ nav button {
       align-items: center;
       justify-content: center;
       height:100vh;
+      font-family: 'Ubuntu', sans-serif;
+    }
+
+    .indads {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width:90vw;
+      column-gap: 5vh;
+      margin-bottom: 4vh;
+    }
+
+    .indads img {
+      width: 20vw;
+      height:30vh;
+      border-radius: 8px;
+    }
+
+    .indads div {
+      width: 50vw;
+      height:30vh;
+    }
+
+    .indads h3 {
+      margin-top: 0;
+    }
+
+    .indads button {
+      background-color: black;
+      color: white;
+      border-radius: 6px;
+      height: 4vh;
+      padding-left: 1vw;
+      padding-right: 1vw;
+      border: none;
+    }
+
+    .indads button:hover {
+      background-color: white;
+      color:black;
+      border-color: black;
+      border: 2px solid;
+    }
+
+    .acBtnDiv {
+      display: flex;
+      flex-direction: row;
+      column-gap: 2vw;
+      height:auto !important;
+      margin-top: 3vh;
+    }
+
+    .acBtnDiv button {
+      margin-top: auto;
+    }
+
+    .accolades p {
+      font-family: 'Arial', sans-serif;
     }
 
     @keyframes slideDown {
@@ -338,6 +438,7 @@ nav button {
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-family: 'Ubuntu', sans-serif;
   }
 
     .aboutservices * {
@@ -496,6 +597,7 @@ nav button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Arial', sans-serif;
   }
 
     .btndv {
@@ -529,21 +631,30 @@ nav button {
       align-items: center;
       height: 18vh;
       margin-bottom: 3vh;
+      border: solid 5px white;
+      border-radius: 15px;
+      width: 25vw;
+      overflow: hidden;
     }
+
+      .vrtitm i {
+        margin-top: 1vh;
+      }
 
       .vrtitm * {
         text-align: center;
       }
 
       .vrtitm p {
-        width: 60%;
-        margin-left: 25%;
-        margin-right: 25%;
+        margin:0;
         font-size: 1.25rem;
+        margin-left: 1vw;
+        margin-right: 1vw;
       }
 
       .vrtitm h3 {
-        color: gray;
+        margin-top: 1vh;
+        margin-bottom: 2vh;
       }
 
 @media (max-width: 1250px) {
@@ -562,6 +673,7 @@ nav button {
 .testimonials {
   height: 100vh;
   width: 100%;
+  font-family: 'Ubuntu', sans-serif;
 }
   #testimonials {
     position: absolute;
@@ -620,6 +732,7 @@ nav button {
         .glidertext p {
           font-size: 2rem;
           margin-left:3rem;
+          font-family: 'Arial', sans-serif;
         }
   .glider-dots {
     height: 6vh;
@@ -647,6 +760,7 @@ form, form > * {
 
 .contact {
   background-color: #000000;
+  font-family: 'Ubuntu', sans-serif;
 }
 
   #contact {
@@ -681,6 +795,7 @@ form, form > * {
 
       .main__text {
         color: white;
+        font-family: 'Arial', sans-serif;
       }
 
     .form {
@@ -843,6 +958,7 @@ form, form > * {
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
   .dropdownp {
@@ -952,6 +1068,7 @@ form, form > * {
 
     .projectCard h1 {
       font-size: 2.5rem;
+      font-family: "Ubuntu", sans-serif;
     }
 
     .prjimg {
@@ -1024,16 +1141,15 @@ form, form > * {
 /* Single Project Page Styles */
 
 .sprojback {
-  background-color: #212121;
+  background-color: #111111;
 }
 
 .cont {
   width:95%;
   margin-left: 2.5%;
   margin-right: 2.5%;
-  display:grid;
+  display: grid;
   grid-template-rows: 3fr 1fr;
-  justify-content: center;
 }
 
 .rightDiv {
@@ -1052,6 +1168,11 @@ form, form > * {
   margin-bottom: 0.5rem;
   margin-left: 0rem;
   color: white;
+}
+
+.firstp {
+  margin-top: 3vh;
+  width: 65vw;
 }
 
 .backbtn {
@@ -1074,6 +1195,24 @@ form, form > * {
   color: white;
 }
 
+.couBtn {
+  border: solid;
+  border-color: white;
+  background-color: hsl(0, 0%, 100%);
+  width:18vh;
+  padding-top:0.5rem;
+  padding-bottom:0.5rem;
+  border-radius: 3px;
+  margin-top: 1.5vh;
+  color: black;
+}
+
+.couBtn:hover {
+  background-color: #000000;
+  border-color: white;
+  color: white;
+}
+
 
 .fa-arrow-left {
   margin-right: 0.7rem;
@@ -1087,6 +1226,7 @@ form, form > * {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 4vh;
+  font-family: 'Arial', sans-serif;
 }
 
 footer {
@@ -1230,6 +1370,7 @@ footer p {
 
   .navbtns {
     display: none;
+    font-family: 'Ubuntu', sans-serif;
   }
 
   .dropdown {

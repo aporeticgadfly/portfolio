@@ -16,13 +16,46 @@ class About extends React.Component {
         color: "black",
         border: "none"
       },
+      vstate: {
+        display: "none"
+      },
+      fstate: {
+        display: "none"
+      },
+      istate: {
+        display: "none"
+      },
+      spin: {
+        animation: "none"
+      },
       filledArr: [null, null, null, null, null, null, null, null, null]
     };
     this.ftClicked = this.ftClicked.bind(this);
     this.procClicked = this.procClicked.bind(this);
     this.linkedin = this.linkedin.bind(this);
+    this.click = this.click.bind(this);
     this.github = this.github.bind(this);
+    this.vhover = this.vhover.bind(this);
+    this.fhover = this.fhover.bind(this);
+    this.ihover = this.ihover.bind(this);
+    this.out = this.out.bind(this);
     window.self = this;
+  }
+
+  vhover() {
+    this.setState({vstate: {display: "block"}});
+  }
+
+  fhover() {
+    this.setState({fstate: {display: "block"}});
+  }
+
+  ihover() {
+    this.setState({istate: {display: "block"}});
+  }
+
+  out() {
+    this.setState({vstate: {display: "none"}, fstate: {display: "none"}, istate: {display: "none"}});
   }
 
   ftClicked() {
@@ -35,6 +68,11 @@ class About extends React.Component {
 
   github() {
     window.location.href = "https://github.com/aptaabye";
+  }
+
+  click(number) {
+    let linkArr = ['https://handsoffdelta.herokuapp.com', 'https://devpost.com/software/hands-off-7p0mc5', 'https://github.com/yoothomas/Hands-Off', 'https://devpost.com/software/rfid-spoofer', 'https://github.com/aptaabye/RFID-Spoofer'];
+    window.location.href = linkArr[number-1];
   }
 
   procClicked() {
@@ -92,16 +130,6 @@ class About extends React.Component {
         count = 0;
       }
     });
-
-    let timeArr = [100, 200, 300, 400, 500, 600, 700];
-    let timeArr2 = [800, 900, 1000, 1100, 1200];
-    document.querySelector(".accolades").onmouseover = function() {
-      for(let i = 0; i < document.querySelector(".accolades").childNodes.length; i++) {
-        setTimeout(function() {
-          document.querySelector(".accolades").childNodes[i].classList.add("added");
-        }, timeArr2[i]);
-      }
-    }
 }
 
   render() {
@@ -117,15 +145,15 @@ class About extends React.Component {
             <button className="dropbtn"><i className="fas fa-bars"></i></button>
             <div className="dropdown-content">
               <hr />
-              <a className="dropa" href="#home">HOME</a>
+              <a className="dropa" href="#home">Home</a>
               <hr />
-              <a className="dropa" href="#about">ABOUT</a>
+              <a className="dropa" href="#about">About</a>
               <hr />
-              <a className="dropa" href="#testimonials">TESTIMONIALS</a>
+              <a className="dropa" href="#testimonials">Testimonials</a>
               <hr />
-              <a className="dropa" href="#contact">CONTACT</a>
+              <a className="dropa" href="#contact">Contact</a>
               <hr />
-              <a className="dropa" href="/projects">PORTFOLIO</a>
+              <a className="dropa" href="/projects">Portfolio</a>
             </div>
           </div>
           <div className="progress-container">
@@ -147,52 +175,96 @@ class About extends React.Component {
             <div><img alt="" className="gif" src={require("../images/coding.gif")} data-aos="fade-right" data-aos-duration="3000"/></div>
           </div>
           <div className="linkedin full">
-            <div className="left">
-              <img alt="" src={require("../images/me.png")} className="me"/>
+            <div className="left"  data-aos="fade-right" data-aos-duration="3000">
+              <img alt="" src={require("../images/placeholder.jpeg")} className="me"/>
               <div className="buttonDiv">
                 <button className="linkedbtn" onClick={this.linkedin}>
                   <i className="fab fa-linkedin"></i>
                 </button>
                 <button onClick={this.github}>
-                  <i class="fab fa-github"></i>
+                  <i className="fab fa-github"></i>
                 </button>
               </div>
             </div>
-            <div className="right">
+            <div className="right" data-aos="fade-left" data-aos-duration="3000">
               <div className="headdv">
                 <h2>Work Experience</h2>
                 <hr className="workhr" />
               </div>
-              <div className="workhd">
-                <h3>Software Engineer at Vodra</h3>
-                <p>React and TypeScript software development for a startup company.</p>
+              <div className="workhd" onMouseOver={this.vhover} onMouseOut={this.out}>
+                <div className="hdr">
+                  <div>
+                    <h3>Software Engineer</h3>
+                    <h4>Vodra</h4>
+                  </div>
+                  <i className="fas fa-sort-down" style={this.state.spin}></i>
+                </div>
+                <div className="ps" style={this.state.vstate}>
+                  <p>• React, TypeScript, and Firebase software development for a cryptocurrency based startup.</p>
+                  <p>• Implemented bidirectional full-duplex streaming functionality between server and client using WebSockets.</p>
+                </div>
               </div>
-              <div className="workhd">
-                <h3>Freelance Software Engineer</h3>
-                <p>Developed dynamic, responsive, scalable web applications for clients and small businesses for two years.</p>
+              <div className="workhd" style={this.fstate} onMouseOver={this.fhover} onMouseOut={this.out}>
+                <div className="hdr">
+                  <div>
+                    <h3>Freelance Software Engineer</h3>
+                    <h4>Self-Employed</h4>
+                  </div>
+                  <i className="fas fa-sort-down" style={this.state.spin}></i>
+                </div>
+                <div className="ps" style={this.state.fstate}>
+                  <p>• Developed dynamic, responsive, scalable web applications for clients and small businesses for two years.</p>
+                  <p>• Languages and frameworks used include HTML, CSS, JavaScript, Node, Express, MongoDB, MySQL, CockroachDB, Python, Ruby on Rails, React, and jQuery.</p>
+                  <p>• Developed over 30 practice projects and 20+ real world projects for clients, some of which are displayed on my portfolio.</p>
+                </div>
               </div>
-              <div className="workhd">
-                <h3>Robotics/Programming Instructor at IRIS</h3>
-                <p>Taught and developed curricula relating to hardware and software engineering principles to people of all ages for two years.</p>
+              <div className="workhd" style={this.istate} onMouseOver={this.ihover} onMouseOut={this.out}>
+                <div className="hdr">
+                  <div>
+                    <h3>Robotics Instructor</h3>
+                    <h4>Institute of Robotics and Intelligent Systems</h4>
+                  </div>
+                  <i className="fas fa-sort-down" style={this.state.spin}></i>
+                </div>
+                <div className="ps" style={this.state.istate}>
+                  <p>• Taught and developed curricula relating to hardware and software engineering principles to people of all ages for two years.</p>
+                  <p>• Courses developed include frontend web development, game design, microcontroller/robotics programming with Arduino and Raspberry
+                  Pi, ROBOTC, Android development with Java, and Python programming.</p>
+                </div>
               </div>
             </div>
           </div>
           <div className="accolades full">
             <h2>Accolades</h2>
             <hr className="abouthr"/>
-              <div className="accleft">
-                <img />
-                <img />
-              </div>
-              <div className="accright">
-                <h3>Winner of DeltaHacks Medical Engineering Design Award</h3>
-                <p>Competed with 800 others in McMasters DeltaHacks Hackathon and won the Medical Engineering Design award for our entry.</p>
-                <p>View project website <a> here</a> and devpost <a> here.</a></p>
-                <h3>Winner of HackPSUs Best Hardware Hack and AF Award</h3>
-                <p>Competed with over 900 other students from around the world in Penn State University's hackathon.
-                Won not one but two awards for Best Hardware Hack and Audience Favourite.
-                The project in question was an RFID Spoofer capable of emulating PICCs to grant a nefarious actor access to areas restricted by RFID technology.</p>
-                <p>View devpost <a> here.</a></p>
+              <div className="adlower">
+                <div className="indads" data-aos="fade-down" data-aos-duration="2500">
+                  <img alt="" src={require("../images/handsoff.jpg")}/>
+                  <div>
+                    <h3>Winner of DeltaHacks Medical Engineering Design Award</h3>
+                    <p>Competed with 800 others in McMasters DeltaHacks Hackathon and won the Medical Engineering Design award for our entry.</p>
+                    <p>Dual project named Hands Off, coming in the form of both a python app and a wearable device. Both aim to mitigate the spread of covid-19 by limiting the amount of contact with mucous membranes. </p>
+                    <p>Sole ideator, implemented backend CockroachDB integration, designed project website with React, and designed wearable.</p>
+                    <div className="acBtnDiv">
+                      <button onClick={() => this.click(1)}>View Project Website</button>
+                      <button onClick={() => this.click(2)}>View Devpost Submission</button>
+                      <button onClick={() => this.click(3)}>View Code on GitHub</button>
+                    </div>
+                  </div>
+                </div>
+                <div className="indads" data-aos="fade-down" data-aos-duration="2500">
+                  <img alt="" src={require("../images/rfid.jpg")}/>
+                  <div>
+                    <h3>Winner of HackPSUs Best Hardware Hack and AF Award</h3>
+                    <p>Competed with over 900 other students from around the world in Penn State University's hackathon. Won not one but two awards for Best Hardware Hack and Audience Favourite. One from the judges, and one from the contestants.</p>
+                    <p>Project in question was an RFID Spoofer, device that was able to capture an RFID signal from PICCs such as hotel cards, and emulating said RFID signals.  In this manner, with previous access to the PICC, one can gain access to whatever that RFID signal unlocks.</p>
+                    <p>Sole ideator, coded brute force function, designed circuit, and assisted with the main code.</p>
+                    <div className="acBtnDiv">
+                      <button onClick={() => this.click(4)}>View Devpost Submission</button>
+                      <button onClick={() => this.click(5)}>View Code on GitHub</button>
+                    </div>
+                  </div>
+                </div>
               </div>
           </div>
           <div className="aboutservices full">
