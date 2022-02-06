@@ -32,6 +32,9 @@ if (process.env.NODE_ENV != 'development') {
 else {
   app.use(express.static(path.join(__dirname, "client/public")));
 }
+
+app.use(hredirect);
+
 if (process.env.NODE_ENV != 'development') {
   app.use(cors({
     origin: "https://www.santiagoorellana.com",
@@ -46,7 +49,6 @@ else {
 }
 app.use(cookieParser());
 app.enable('trust proxy');
-app.use(hredirect);
 app.use(forceHttps);
 
 mongoose.connect(process.env.MONGO, {useNewUrlParser: true});
