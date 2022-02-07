@@ -239,7 +239,7 @@ class About extends React.Component {
             <hr className="abouthr"/>
               <div className="adlower">
                 <div className="indads" data-aos="fade-down" data-aos-duration="2500">
-                  <img alt="" src={require("../images/placeholder-image.png")}/>
+                  <img alt="" src={require("../images/handsoff.jpg")}/>
                   <div>
                     <h3>Winner of DeltaHacks Medical Engineering Design Award</h3>
                     <p>Competed with 800 others in McMasters DeltaHacks Hackathon and won the Medical Engineering Design award for our entry.</p>
