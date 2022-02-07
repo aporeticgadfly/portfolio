@@ -100,7 +100,7 @@ app.get("/compose", function(req, res) {
 app.get("/unsplash", function(req, res) {
   var key = process.env.UNSPLASH_KEY;
   var link = 'https://api.unsplash.com/collections/d1m7gMO3M7E/photos/?client_id=' + key;
-  res.set('Access-Control-Allow-Origin', 'www.santiagoorellana.com');
+  res.set('Access-Control-Allow-Origin', 'https://www.santiagoorellana.com');
 
   axios.get(link)
     .then(response => {
