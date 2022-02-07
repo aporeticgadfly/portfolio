@@ -141,12 +141,6 @@ class App extends React.Component {
   render() {
   return (
     <Switch>
-      <Route path="/">
-        <Title />
-        <About />
-        <Testimonials />
-        <Contact />
-      </Route>
       <Route path="/home">
         <Title />
         <About />
@@ -192,6 +186,12 @@ class App extends React.Component {
       </Route>
       <Route path="/compose">
         <Compose authenticate={this.state.authenticate}/>
+      </Route>
+      <Route path="/">
+        <Title />
+        <About />
+        <Testimonials />
+        <Contact />
       </Route>
     </Switch>
   );
