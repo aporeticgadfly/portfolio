@@ -100,8 +100,8 @@ app.get("/compose", function(req, res) {
 app.get("/unsplash", function(req, res) {
   var key = process.env.UNSPLASH_KEY;
   var link = 'https://api.unsplash.com/collections/d1m7gMO3M7E/photos/?client_id=' + key;
-  res.header("Access-Control-Allow-Origin", "true");
-  
+  res.set('Access-Control-Allow-Origin', '*');
+
   axios.get(link)
     .then(response => {
       var rand = Math.round(Math.random() * 5);
