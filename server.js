@@ -49,7 +49,7 @@ app.use(cors({
 app.use(cookieParser());
 app.enable('trust proxy');
 app.use(forceHttps);
-app.use(hredict);
+app.use(hredirect);
 
 mongoose.connect(process.env.MONGO, {useNewUrlParser: true});
 
