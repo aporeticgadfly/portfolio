@@ -653,6 +653,7 @@ nav button {
       .vrtitm h3 {
         margin-top: 1vh;
         margin-bottom: 2vh;
+        font-family: 'Ubuntu', sans-serif;
       }
 
 @media (max-width: 1250px) {
