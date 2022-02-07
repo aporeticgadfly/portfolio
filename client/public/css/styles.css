@@ -351,6 +351,7 @@ nav button {
       width:90vw;
       column-gap: 5vh;
       margin-bottom: 4vh;
+      overflow: hidden;
     }
 
     .indads img {
