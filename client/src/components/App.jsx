@@ -141,6 +141,12 @@ class App extends React.Component {
   render() {
   return (
     <Switch>
+      <Route path="/">
+        <Title />
+        <About />
+        <Testimonials />
+        <Contact />
+      </Route>
       <Route path="/home">
         <Title />
         <About />
