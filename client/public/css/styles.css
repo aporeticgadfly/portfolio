@@ -169,8 +169,6 @@ nav button {
   #about {
     margin-bottom: 7vh;
     height: 2vh;
-    position: absolute;
-    top: 95vh;
     display: block;
     color: transparent;
   }
@@ -676,8 +674,6 @@ nav button {
   font-family: 'Ubuntu', sans-serif;
 }
   #testimonials {
-    position: absolute;
-    top: 295vh;
   }
 
   .testimonialsheader {
@@ -764,9 +760,8 @@ form, form > * {
 }
 
   #contact {
-    position: absolute;
-    top: 395vh;
   }
+
   .contactheader {
     padding-top: 4vh;
     color: white;
@@ -1306,7 +1301,6 @@ footer p {
   }
 
   #testimonials {
-    top: 325vh !important;
   }
 
   .d-block {
@@ -1314,7 +1308,6 @@ footer p {
   }
 
   #contact {
-    top: 430vh !important;
   }
 
   .contact {
