@@ -222,6 +222,10 @@ app.post('/compose', withAuth, function(req, res) {
   })
 });
 
+app.get('/', function(req, res) {
+  res.redirect(process.env.URL);
+})
+
 app.listen(process.env.PORT, function() {
   console.log("Server started on: "+process.env.PORT);
 });
