@@ -78,7 +78,7 @@ let transport = nodemailer.createTransport({
 });
 
 app.get("/home", function(req, res) {
-  
+  res.status(200);
 });
 
 app.get('/linkedin', function(req, res) {
