@@ -49,7 +49,7 @@ app.use(cors({
 app.use(cookieParser());
 app.enable('trust proxy');
 app.use(forceHttps);
-app.use(hredirect);
+app.use(hredict);
 
 mongoose.connect(process.env.MONGO, {useNewUrlParser: true});
 
@@ -77,8 +77,8 @@ let transport = nodemailer.createTransport({
    }
 });
 
-app.get("/home", hredirect, function(req, res) {
-  res.sendFile(path.join(__dirname+process.env.SERVE_PATH));
+app.get("/home", hredirect, forceHttps);
+  }
 });
 
 app.get('/linkedin', function(req, res) {
@@ -223,6 +223,7 @@ app.post('/compose', withAuth, function(req, res) {
 });
 
 app.get('/', function(req, res) {
+  console.log('base url');
   res.redirect(process.env.URL);
 })
 

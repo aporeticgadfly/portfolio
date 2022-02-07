@@ -67,6 +67,11 @@ class App extends React.Component {
 
   componentDidMount() {
 
+    axios.get(configData.SERVER_URL+'/home')
+      .catch(
+        err => console.log(err)
+      );
+      
     axios.get(configData.SERVER_URL+'/projectss')
     .then(
       res => {
