@@ -190,6 +190,7 @@ nav button {
     align-items: center;
     height: 85vh;
     width: 100%;
+    overflow: hidden;
   }
 
     .aboutself div {
@@ -229,6 +230,7 @@ nav button {
     justify-content: center;
     column-gap: 10vw;
     font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
   }
 
   .linkedin h2 {
@@ -338,6 +340,7 @@ nav button {
       justify-content: center;
       height:100vh;
       font-family: 'Ubuntu', sans-serif;
+      overflow: hidden;
     }
 
     .indads {

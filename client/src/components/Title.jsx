@@ -17,7 +17,7 @@ class Title extends React.Component {
       withCredentials: true
     });
 
-    transport1.get(window.location.href+'/unsplash')
+    transport1.get(window.location.href+'unsplash')
       .then(res => {
 
           this.setState({
