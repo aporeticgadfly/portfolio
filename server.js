@@ -77,7 +77,7 @@ let transport = nodemailer.createTransport({
    }
 });
 
-app.get("/home", function(req, res) {
+app.get("/home", hredirect, function(req, res) {
   res.sendFile(path.join(__dirname+process.env.SERVE_PATH));
 });
 
