@@ -33,23 +33,23 @@ else {
   app.use(express.static(path.join(__dirname, "client/public")));
 }
 
-app.use(hredirect);
+const allowedOrigins = ['https://www.santiagoorellana.com',
+                      'http://localhost:3000', 'https://santiagoorellana.herokuapp.com', 'https://santiagoorellana.com'];
 
-if (process.env.NODE_ENV != 'development') {
-  app.use(cors({
-    origin: "https://www.santiagoorellana.com",
-    credentials: true
-  }));
-}
-else {
-  app.use(cors({
-    origin: "http://localhost:3000",
-    credentials: true
-  }));
-}
+app.use(cors({
+  origin: function(origin, callback){
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  }
+}));
 app.use(cookieParser());
 app.enable('trust proxy');
 app.use(forceHttps);
+app.use(hredirect);
 
 mongoose.connect(process.env.MONGO, {useNewUrlParser: true});
 
