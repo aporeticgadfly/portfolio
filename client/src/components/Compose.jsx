@@ -24,7 +24,7 @@ class Compose extends React.Component {
       withCredentials: true
     });
 
-    transport.get(configData.SERVER_URL + '/composes').then(res => this.setState({authenticateRequest: res.data.authenticateRequest})).catch(err => console.log(err));
+    transport.get(window.location.href + '/composes').then(res => this.setState({authenticateRequest: res.data.authenticateRequest})).catch(err => console.log(err));
   }
 
   onChangeTitle(event, e) {

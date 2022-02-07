@@ -72,7 +72,7 @@ class App extends React.Component {
         err => console.log(err)
       );
 
-    axios.get(configData.SERVER_URL+'/projectss')
+    axios.get(window.location.href+'/projectss')
     .then(
       res => {
         this.setState({proj: this.state.proj.concat(res.data)});
