@@ -77,7 +77,9 @@ let transport = nodemailer.createTransport({
    }
 });
 
-app.get("/home", hredirect);
+app.get("/home", hredirect, forceHttps, function(req, res) {
+    res.sendFile(path.join(__dirname+process.env.SERVE_PATH));
+});
 
 app.get('/linkedin', function(req, res) {
   res.redirect("https://www.linkedin.com/in/santiago-orellana-67873418b/");
