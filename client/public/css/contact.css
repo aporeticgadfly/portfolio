@@ -1,0 +1,242 @@
+form, form > * {
+  color: hsl(249, 10%, 26%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.contact {
+  background-color: #000000;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+  #contact {
+  }
+
+  .contactheader {
+    padding-top: 4vh;
+    color: white;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height:70vh;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-items: center;
+  }
+
+    .main__content {
+      grid-column-start: 1;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+      .main__title {
+        color: gray;
+        margin-left: 0;
+      }
+
+      .main__text {
+        color: white;
+        font-family: 'Arial', sans-serif;
+      }
+
+    .form {
+      grid-column-start: 2;
+      background-color: white;
+      border-radius:8px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 10%;
+      margin-right: 10%;
+      width:80%;
+      height: 48vh;
+    }
+
+      .form__text {
+        font-size: 0.9rem;
+        margin-right: auto;
+        margin-left: 10%;
+      }
+
+      .button {
+        height: 15%;
+        border: 0;
+        border-radius: 0.5rem;
+        color: white;
+        background-color: #000000;
+        cursor: pointer;
+        text-align: center;
+        margin-bottom: 0;
+        outline: 0;
+        width: 50%;
+        transition: .3s linear;
+        margin-right: auto;
+        margin-left: 10%;
+      }
+
+      .in {
+        height: 15%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+        #email {
+          height: 85%;
+          margin-top: auto;
+          margin-bottom: auto;
+          width: 80%;
+        }
+
+      .ta {
+        height: 60%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+        #msg {
+          padding-top: 2%;
+          height: 85%;
+          width: 80%;
+          resize: none;
+        }
+
+      .form__input {
+        border-radius:5px;
+        box-shadow: none;
+        border: none;
+        background-color: #D3D3D3;
+        text-indent: 3% !important;
+      }
+
+      .form__input:focus {
+        border: .1rem solid hsl(248, 32%, 49%);
+      }
+
+      .form__input::placeholder {
+      }
+
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+      .isa_error {
+        height:9vh;
+        width:53vw;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 8px;
+        color: #D8000C;
+        background-color: #FFD2D2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 10px;
+      }
+
+      .isa_success {
+        height:9vh;
+        margin-left: auto;
+        margin-right: auto;
+        width:34vw;
+        border-radius: 8px;
+        color: #4F8A10;
+        background-color: #DFF2BF;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 10px;
+      }
+
+      .isa_success i, .isa_error i {
+        font-size:2em;
+      }
+
+      .isa_success p, .isa_error p {
+        text-align: center;
+        vertical-align: center;
+      }
+
+      #modal {
+        width:55vw;
+        margin-left: auto;
+        margin-right: auto;
+        height:20vh;
+        margin-top: 2vh;
+        margin-bottom: 88vh;
+        border-radius: 10px;
+        animation: fadeIn 1.5s;
+        background-color: transparent !important;
+        border: none !important;
+        overflow: hidden !important;
+      }
+
+      .ReactModal__Overlay {
+        background-color: transparent !important;
+      }
+
+      .modalBtn {
+        background-color: transparent;
+        border:none;
+        color: black;
+        align-self: flex-start;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-right: 2vw;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: #000000;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 4vh;
+        font-family: 'Arial', sans-serif;
+      }
+
+      footer {
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0.5vw;
+      }
+
+      footer button {
+        color: transparent;
+        background-color: transparent;
+        border: none;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      .fa-linkedin {
+        color: white;
+        font-size: 2em;
+      }
+
+      .fa-linkedin:hover {
+        color: gray;
+      }
+
+      .fa-github {
+        color: white;
+        font-size: 2em;
+      }
+
+      .fa-github:hover {
+        color: gray;
+}

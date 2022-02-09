@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+  Link
+} from 'react-router-dom';
+
 class Proj extends React.Component {
 
   componentDidMount() {
@@ -17,11 +21,13 @@ class Proj extends React.Component {
 
   render() {
     return (
-      <div className="card" onClick={(e) => this.props.projectClick(this.props.id, e)}>
-        <img alt=""className="prjimg" src={this.props.image}/>
-        <h1>{this.props.title}</h1>
-        <p>{this.props.description}</p>
-      </div>
+      <Link to={'project/'+this.props.id}>
+        <div className="card" onClick={(e) => this.props.projectClick(this.props.id, e)}>
+          <img alt="" className="prjimg" src={this.props.image}/>
+          <h1>{this.props.title}</h1>
+          <p>{this.props.description}</p>
+        </div>
+      </Link>
     );
   }
 }

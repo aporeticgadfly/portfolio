@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import configData from '../config.json';
 
 class Title extends React.Component {
   constructor(props) {
@@ -17,7 +16,7 @@ class Title extends React.Component {
       withCredentials: true
     });
 
-    transport1.get(window.location.href+'unsplash')
+    transport1.get('http://'+window.location.hostname+':3000/unsplash')
       .then(res => {
 
           this.setState({

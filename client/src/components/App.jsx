@@ -10,6 +10,7 @@ import Input from './Input';
 import Compose from './Compose';
 import axios from 'axios';
 import configData from '../config.json';
+import 'animate.css';
 import {
   Route,
   Link,
@@ -72,7 +73,7 @@ class App extends React.Component {
         err => console.log(err)
       );
 
-    axios.get(window.location.href+'projectss')
+    axios.get('http://'+window.location.hostname+':3000/projectss')
     .then(
       res => {
         this.setState({proj: this.state.proj.concat(res.data)});
@@ -91,27 +92,24 @@ class App extends React.Component {
     if(proj !== 0) {
       return(
         <div className="projectCard" key = {this.state.proj[proj]._id}>
-          <Link to= "/singleproject" style={{textDecoration: "none"}}>
-            <Proj
-              key = {this.state.proj[proj]._id}
-              id = {this.state.proj[proj]._id}
-              image = {this.state.proj[proj].imageUrls[0]}
-              title = {this.state.proj[proj].title}
-              description = {this.state.proj[proj].desc}
-              projectClick = {this.projectClick}
-            />
-          </Link>
+          <Proj
+            key = {this.state.proj[proj]._id}
+            id = {this.state.proj[proj]._id}
+            image = {this.state.proj[proj].imageUrls[0]}
+            title = {this.state.proj[proj].title}
+            description = {this.state.proj[proj].desc}
+            projectClick = {this.projectClick}
+          />
         </div>
       );
     }
   }
 
   projectClick(projectClicked, e) {
-    console.log(projectClicked);
     this.setState({projectToRender:projectClicked});
   }
 
-  createSingleProject(){
+  createSingleProject(match){
 
     for(var y = 1; y < this.state.proj.length; y++) {
       if(this.state.projectToRender === this.state.proj[y]._id)
@@ -126,14 +124,7 @@ class App extends React.Component {
         <Link to="/projects">
           <button className="backbtn"><i  className="fas fa-arrow-left"></i><span>Back</span></button>
         </Link>
-        <SingleProject
-          key = {projClicked._id}
-          id = {projClicked._id}
-          images = {projClicked.imageUrls}
-          description = {projClicked.desc}
-          title = {projClicked.title}
-          link = {projClicked.link}
-        />
+        <SingleProject/>
       </div>
     );
   }
@@ -178,7 +169,7 @@ class App extends React.Component {
           </div>
         </div>
       </Route>
-      <Route path="/singleproject">
+      <Route path="/project/:projid">
         {this.createSingleProject}
       </Route>
       <Route path="/authenticate">

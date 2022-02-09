@@ -1,0 +1,354 @@
+@media (max-width: 1250px) {
+  .vrtitm p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width:1200px) {
+  .prj {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .prjttl h2{
+    font-size: 3.5vh;
+  }
+
+  .prjnvbtn p {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .titletext {
+    width: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 5rem;
+    margin-bottom: 5vh !important;
+  }
+
+  .aboutDiv {
+    height: auto !important;
+  }
+
+  .aboutself, .aboutservices, .container {
+    display: block !important;
+    height: auto !important;
+  }
+
+  .aboutself > *{
+    width: 90% !important;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto !important;
+  }
+
+  .aboutservices > *{
+    width: 90% !important;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto !important;
+  }
+
+  #testimonials {
+  }
+
+  .d-block {
+    width: 100%;
+  }
+
+  #contact {
+  }
+
+  .contact {
+    height: auto !important;
+  }
+
+  .container > *{
+    width: 90% !important;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto !important;
+  }
+
+  .main__content * {
+    text-align: center;
+  }
+
+  .main__content {
+    margin-bottom: 5vh;
+  }
+
+  .form {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 15vh !important;
+  }
+
+  .gif {
+    display: none;
+  }
+}
+
+@media (max-width:900px) {
+
+  .description p {
+    font-size: 1.75rem;
+  }
+
+  .prjttl h2{
+    font-size: 3vh;
+    margin-right: 5vh;
+  }
+
+  .prjnvbtn p {
+    font-size: 65%;
+    margin-left: 0;
+  }
+
+  .searchbar::placeholder {
+    font-size: 1vh;
+  }
+
+  .couFlag {
+    height:50vh !important;
+  }
+
+}
+
+@media (max-height: 700px) {
+  .vrtclcrsl p {
+    font-size: 1rem;
+  }
+
+  .glidertext p {
+    font-size: 1rem;
+    margin-left: 3vw;
+  }
+
+  .glidertext h1 {
+    margin-bottom: 2vh;
+  }
+}
+
+@media (max-width:600px) {
+  .prj {
+    grid-template-columns: 1fr;
+  }
+
+  .attribution {
+    font-size: 1rem !important;
+  }
+
+  .searchbar::placeholder {
+    font-size: 2vh;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .couFlag {
+    height:30vh !important;
+  }
+
+  .cont {
+    grid-template-rows: 1fr 1fr !important;
+  }
+
+html, body {
+  width: 100vw;
+}
+
+.titleDiv h1 {
+  margin-top: 25vh !important;
+}
+
+.titlebtn {
+  width: 70% !important;
+  margin-left: 15% !important;
+  margin-right: 15% !important;
+  height: 8vh;
+}
+
+.titletext {
+  font-size: 3rem;
+}
+
+.navbtns {
+  display: none;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.dropdown {
+  display: inline-block;
+  width: 100%;
+  background-color: black;
+}
+
+.dropbtn {
+  border-radius: 5px;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  margin-left: 2vw;
+}
+
+.dropbtn:focus {
+  outline: none;
+}
+
+.dropa {
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.reveala {
+  display: flex !important;
+  flex-direction: column;
+  background-color: black;
+  width: 100%;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.btndv {
+  width: 100%;
+}
+
+.vrtitm {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.vrtclcrsl p {
+  font-size: 1.3rem;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.glider-contain {
+  margin-top: 2vh!important;
+  height: 70vh !important;
+}
+
+.glider {
+  height: auto;
+  height: 70vh !important;
+}
+
+.glider-item {
+  flex-direction: column;
+}
+
+.glidertext {
+  width: 100%;
+  margin-left: 0;
+  height: 40vh;
+}
+
+.glidertext * {
+  margin-left: 0;
+  margin-bottom: 5vh;
+}
+
+.glidertext h1 {
+  font-size: 3rem;
+}
+
+.glidertext p {
+  font-size: 1.5rem;
+  line-height: normal;
+}
+
+.d-block {
+  height: 40vh !important;
+  width: 100% !important;
+}
+
+.form__text {
+  font-size: 0.73rem;
+}
+
+.footer {
+  font-size: 1rem;
+}
+
+.prjnv {
+  display: none;
+}
+
+.searchbar {
+  display: none;
+}
+
+.prjttl {
+  justify-content: flex-end;
+}
+
+.prjttl h2 {
+  margin-right: auto;
+  margin-left: 5vw;
+}
+
+.dropdownp {
+  display: inline-block;
+  width: 10%;
+  background-color: black;
+  margin-right: 5vw;
+}
+
+.dropbtnp {
+  border: none;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.dropbtnp:focus {
+  outline: none;
+}
+
+.reveal {
+  position: fixed;
+  top:10vh;
+  display: flex !important;
+  flex-direction: column;
+  background-color: black;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.dropap {
+  color: white;
+}
+
+.dropdownp:hover .dropap {
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.dropdown-contentp {
+  display: none;
+}
+}
+
+@media (max-width: 400px) {
+  .description p {
+    font-size: 1.25rem;
+  }
+
+  .vrtitm p {
+    font-size: 0.75rem;
+  }
+}

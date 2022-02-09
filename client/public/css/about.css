@@ -1,0 +1,485 @@
+.aboutDiv {
+  height: 285vh;
+  width: 100%;
+  display: inline;
+}
+
+  #about {
+    margin-bottom: 7vh;
+    height: 2vh;
+    display: block;
+    color: transparent;
+  }
+
+  .aboutheader {
+    height: 5vh;
+    margin-top: 5vh;
+    padding: 0;
+  }
+
+  .abouthr {
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+  }
+
+  .aboutself {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+    .aboutself div {
+      width:40%;
+      margin-left: 5%;
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+      height: 75vh;
+    }
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 2vh;
+        font-family: 'Arial', sans-serif;
+      }
+
+        .description p {
+          margin-bottom: 5vh;
+          font-size: 2.25rem;
+        }
+
+      .gif {
+        height:75vh;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+  .linkedin {
+    height:100vh;
+    background-color: #000000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    column-gap: 10vw;
+    font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
+  }
+
+  .linkedin h2 {
+    color: white;
+  }
+
+    .left {
+      width: 33vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 3vh;
+    }
+
+      .me {
+        width:33vw;
+        height:50vh;
+      }
+
+      .buttonDiv button {
+        background-color: #000000;
+        border: none;
+      }
+
+        .linkedbtn {
+          margin-right: 0.5vw;
+        }
+
+    .right {
+      width: 40vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 85vh;
+      row-gap: 3vh;
+    }
+
+    .right h2 {
+      margin-top: 10vh;
+    }
+
+    .right h3 {
+      color: #5eb3ce;
+      margin-top: 1vh;
+    }
+
+    .workhd {
+      border: solid white;
+      border-radius: 20px;
+      padding-left: 0.5vw;
+      padding-right: 0.5vw;
+      width:40vw;
+    }
+
+    .hdr {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .hdr h4 {
+      color: white;
+      font-style: italic;
+      margin-bottom: 2vh;
+    }
+
+    .fa-sort-down {
+      color: white;
+      margin-right: 1vw;
+    }
+
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform:rotate(360deg);
+      }
+    }
+
+    .spin {
+      animation: spin 1s;
+    }
+
+    .workhd p {
+      color: white;
+      margin-left: 1vw;
+      margin-right: 1vw;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .ps {
+      margin-top: 2vh;
+      margin-bottom: 1.5vh;
+    }
+
+    .workhr {
+      width: 15vw;
+      margin: 0;
+      margin-bottom: 3vh;
+    }
+
+    .accolades {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height:100vh;
+      font-family: 'Ubuntu', sans-serif;
+      overflow: hidden;
+    }
+
+    .indads {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width:90vw;
+      column-gap: 5vh;
+      margin-bottom: 4vh;
+      overflow: hidden;
+    }
+
+    .indads img {
+      width: 20vw;
+      height:30vh;
+      border-radius: 8px;
+    }
+
+    .indads div {
+      width: 50vw;
+      height:30vh;
+    }
+
+    .indads h3 {
+      margin-top: 0;
+    }
+
+    .indads button {
+      background-color: black;
+      color: white;
+      border-radius: 6px;
+      height: 4vh;
+      padding-left: 1vw;
+      padding-right: 1vw;
+      border: none;
+    }
+
+    .indads button:hover {
+      background-color: white;
+      color:black;
+      border-color: black;
+      border: 2px solid;
+    }
+
+    .acBtnDiv {
+      display: flex;
+      flex-direction: row;
+      column-gap: 2vw;
+      height:auto !important;
+      margin-top: 3vh;
+    }
+
+    .acBtnDiv button {
+      margin-top: auto;
+    }
+
+    .accolades p {
+      font-family: 'Arial', sans-serif;
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-60px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .added {
+      /*animation: slideDown 1s;
+      display: flex;*/
+    }
+
+    .aboutservices {
+      background-color: #000000;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-family: 'Ubuntu', sans-serif;
+    }
+
+      .aboutservices * {
+        color: white;
+      }
+
+      .aboutservices > div {
+        height: 100vh;
+        width: 40%;
+        margin-left: 5%;
+      }
+
+      .skills {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+      }
+
+        h3 {
+          margin-top: 3vh;
+          margin-bottom: 2vh;
+        }
+
+        .sklhr {
+          width: 15vw;
+          margin: 0;
+          margin-left: 0;
+        }
+
+        .skills p {
+          margin-top: 2vh;
+          height: 2vh;
+        }
+
+        .empty {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 96%;
+          background-color: #000000;
+          height:3vh;
+          margin: 0;
+          border-radius: 5px;
+        }
+
+          .filled {
+            transition: width 1s;
+            width: 0 !important;
+          }
+
+          .transit {
+            width: 100% !important;
+          }
+
+          .empty p {
+            display: inline-block;
+            margin: 0;
+            width: 1%;
+            font-size: 1.6rem;
+            margin-left: 3%;
+            text-align: center;
+          }
+
+        .reacte {
+          width: 86%;
+        }
+
+        .nodee {
+          width:86%;
+        }
+
+        .htmle {
+          width: 96%;
+        }
+
+        .csse {
+          width: 96%;
+        }
+
+        .javascripte {
+          width: 91%;
+        }
+
+        .jquerye {
+          width: 91%;
+        }
+
+        .mongodbe {
+          width: 81%;
+        }
+
+        .sqle {
+          width: 61%;
+        }
+
+        .pythone {
+          width: 86%;
+        }
+
+          .react {
+            background-color: #ff66cc !important;
+            height: 3vh;
+            border-radius: 5px;
+          }
+
+          .node {
+            background-color: #ffa812 !important;
+            height: 3vh;
+            border-radius: 5px;
+          }
+
+          .html {
+            background-color: #1560bd !important;
+            height: 3vh;
+            border-radius: 5px;
+          }
+
+          .css {
+            background-color: #d40000 !important;
+            height: 3vh;
+            border-radius: 5px;
+          }
+
+          .javascript {
+            background-color: #00ced1 !important;
+            height: 3vh;
+            border-radius: 5px;
+          }
+
+          .jquery {
+            background-color: #ffd800 !important;
+            height: 3vh;
+            border-radius: 5px;
+          }
+
+          .mongodb {
+            background-color: #966fd6 !important;
+            height: 3vh;
+            border-radius: 5px;
+          }
+
+          .sql {
+            background-color: aqua !important;
+            height: 3vh;
+            border-radius: 5px;
+          }
+
+          .python {
+            background-color: #03c03c !important;
+            height: 3vh;
+            border-radius: 5px;
+          }
+
+    .vrtclcrsl {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+    }
+
+      .btndv {
+        margin-bottom: 2vh;
+        margin-top: 3vh;
+        height: 5vh;
+        width: 35%;
+      }
+
+        .ftbtn {
+          background-color: #000000;
+          color: white;
+          border: thin solid white;
+          border-radius: 5px 0px 0px 5px;
+          width: 50%;
+          height: 5vh;
+        }
+
+        .procbtn {
+          background-color: white;
+          color: black;
+          border-radius: 0px 5px 5px 0px;
+          width: 50%;
+          height:5vh;
+          border: none;
+        }
+
+      .vrtitm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 18vh;
+        margin-bottom: 3vh;
+        border: solid 5px white;
+        border-radius: 15px;
+        width: 25vw;
+        overflow: hidden;
+      }
+
+        .vrtitm i {
+          margin-top: 1vh;
+        }
+
+        .vrtitm * {
+          text-align: center;
+        }
+
+        .vrtitm p {
+          margin:0;
+          font-size: 1.25vh;
+          margin-left: 1vw;
+          margin-right: 1vw;
+        }
+
+        .vrtitm h3 {
+          margin-top: 1vh;
+          margin-bottom: 2vh;
+          font-family: 'Ubuntu', sans-serif;
+        }
