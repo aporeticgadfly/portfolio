@@ -98,7 +98,7 @@ class About extends React.Component {
       <div>
         <NavProgress />
         <div className="aboutDiv">
-        <a className="none" href="/home#about" id="about">text</a>
+        <a tabIndex="-1" className="none" href="/home#about" id="about">text</a>
         <h1 className="header aboutheader">About</h1>
         <hr className="abouthr"/>
         <div className="aboutsection">
@@ -117,12 +117,12 @@ class About extends React.Component {
                 <h2>Work Experience</h2>
                 <hr className="workhr" />
               </div>
-              <img alt="A picture of Santiago" src={require("../images/placeholder.jpeg")} className="me"/>
+              <img alt="The developer, Santiago" src={require("../images/placeholder.jpeg")} className="me"/>
               <div className="buttonDiv">
-                <button className="linkedbtn" onClick={this.linkedin}>
+                <button aria-label="linkedin link" className="linkedbtn" onClick={this.linkedin}>
                   <i className="fab fa-linkedin"></i>
                 </button>
-                <button onClick={this.github}>
+                <button aria-label="github link" onClick={this.github}>
                   <i className="fab fa-github"></i>
                 </button>
               </div>

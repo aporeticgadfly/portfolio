@@ -10,6 +10,7 @@ import Input from './Input';
 import Compose from './Compose';
 import axios from 'axios';
 import configData from '../config.json';
+import 'animate.css';
 import {
   Route,
   Link,
@@ -27,7 +28,7 @@ class App extends React.Component {
     this.onChangePwd = this.onChangePwd.bind(this);
     this.submitClick = this.submitClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    }
+  }
 
   onChangeUser(event, e) {
     this.setState({username: event.target.value});
@@ -91,7 +92,7 @@ class App extends React.Component {
     if(proj !== 0) {
       return(
         <div className="projectCard" key = {this.state.proj[proj]._id}>
-          <Link to= {"/singleproject/"+this.state.proj[proj]._id} style={{textDecoration: "none"}}>
+          <Link to= {"/singleproject/"+this.state.proj[proj]._id} className="projLink" style={{textDecoration: "none"}}>
             <Proj
               key = {this.state.proj[proj]._id}
               id = {this.state.proj[proj]._id}
@@ -161,10 +162,10 @@ class App extends React.Component {
           <div className="prjttl">
             <h2>Projects</h2>
             <nav className="prjnv">
-              <a className="init" href="home#home"><button className="prjnvbtn homeb" ><p>Home</p></button></a>
-              <a href="home#about"><button className="prjnvbtn aboutb" ><p>About</p></button></a>
-              <a href="home#testimonials"><button className="prjnvbtn testb" ><p>Testimonials</p></button></a>
-              <a href="home#contact"><button className="prjnvbtn contactb" ><p>Contact</p></button></a>
+              <a tabIndex="-1" className="init" href="home#home"><button className="prjnvbtn homeb" ><p>Home</p></button></a>
+              <a tabIndex="-1" href="home#about"><button className="prjnvbtn aboutb" ><p>About</p></button></a>
+              <a tabIndex="-1" href="home#testimonials"><button className="prjnvbtn testb" ><p>Testimonials</p></button></a>
+              <a tabIndex="-1" href="home#contact"><button className="prjnvbtn contactb" ><p>Contact</p></button></a>
             </nav>
             <Input handleChange={this.handleChange}/>
             <div className="dropdownp">

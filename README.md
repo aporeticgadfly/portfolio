@@ -53,7 +53,7 @@ Features
   Input fields are validated.
   Responsive design is embodied through usage of flexbox, CSS grid, media queries, and relative units.
   Cross browser testing implemented with Selenium.
-  Designed with accessibility in mind (intuitive tab order, alt descriptions on images, usage of landmarks, accessible tap targets, etc).
+  Designed with accessibility in mind (intuitive tab order, alt descriptions on images, usage of landmarks, adherence to heading structure, accessible tap targets, tab indexing, ARIA labels, etc).
   Stores records of mail messages and uploaded projects in the database.
   Uses a mail relay to mail confirmation to form inputters and to deliver the mail to me, the recipient.
   Serves project images using cloudinary; Unsplash used for Title background.

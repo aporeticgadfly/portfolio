@@ -19,10 +19,10 @@ class Footer extends React.Component {
     return (
       <div className="footer">
         <footer>
-          <button onClick={this.linkedin}>
+          <button aria-label="linkedin link" onClick={this.linkedin}>
             <i className="fab fa-linkedin"></i>
           </button>
-          <button onClick={this.github}>
+          <button aria-label="github link" onClick={this.github}>
             <i className="fab fa-github"></i>
           </button>
           <p>&copy; 2020 Santiago Orellana. All Rights Reserved.</p>

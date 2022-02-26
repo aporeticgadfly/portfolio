@@ -15,7 +15,7 @@ class Contact extends React.Component {
   render() {
     return (
     <div className="contact full">
-      <a className="none" href="/home#contact" id="contact">text</a>
+      <a tabIndex="-1" className="none" href="/home#contact" id="contact">text</a>
       <h1 className="contactheader header">Contact</h1>
       <hr />
       <div className="container main__container">

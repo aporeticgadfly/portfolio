@@ -11,9 +11,6 @@ form, form > * {
   min-height: 100vw;
 }
 
-  #contact {
-  }
-
   .contactheader {
     padding-top: 4vh;
     color: white;
@@ -208,6 +205,7 @@ form, form > * {
         margin-right: auto;
         padding-bottom: 4vh;
         font-family: 'Arial', sans-serif;
+        margin-top: 8vh;
       }
 
       footer {

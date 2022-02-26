@@ -52,18 +52,6 @@
       margin-bottom: auto;
     }
 
-    .homeb {
-
-    }
-
-    .aboutb {
-
-    }
-
-    .init {
-
-    }
-
   .searchbar {
     margin-right: 5vw;
     width: 20vw;
@@ -72,10 +60,6 @@
     border: none;
     text-indent: 2vh;
   }
-
-    .fa-search {
-
-    }
 
 .prj {
   margin-top: 12vh;
@@ -101,6 +85,14 @@
   .projectCard:hover {
     animation: pulse;
     animation-duration: 0.5s;
+  }
+
+  .projectCard:focus-within{
+    outline: 2px solid blue;
+  }
+
+  .projLink:focus {
+    outline: none;
   }
 
     .projectCard p, h1 {

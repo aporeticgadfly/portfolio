@@ -50,7 +50,7 @@ class Title extends React.Component {
         <div className="titleWrapper">
           <h1 className ="titletext" id="name">Santiago Orellana</h1>
           <h3 className = "titletext">Full-Stack Web Developer</h3>
-          <a href="/projects"><button className="titlebtn">View Portfolio</button></a>
+          <a tabIndex="-1" href="/projects"><button className="titlebtn">View Portfolio</button></a>
           <p className="titletext attribution">Photo by <a href={this.state.link}>{this.state.name}</a> on <a href="https://unsplash.com/">Unsplash</a></p>
         </div>
       </div>

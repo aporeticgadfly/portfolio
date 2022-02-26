@@ -23,7 +23,7 @@ class Testimonials extends React.Component {
 
     return (
     <div className = "testimonials full">
-      <a className="none" href="/home#testimonials" id="testimonials">text</a>
+      <a tabIndex="-1" className="none" href="/home#testimonials" id="testimonials">text</a>
       <h1 className = "header testimonialsheader">Testimonials</h1>
       <hr />
         <div className="glider-contain">

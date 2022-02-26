@@ -129,6 +129,7 @@ app.get("/singleproject/:id", function(req, res) {
         link: project.link
       };
       res.send(proj);
+      res.sendFile(path.join(__dirname+process.env.SERVE_PATH));
     }
   })
 });
