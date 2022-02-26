@@ -1,0 +1,510 @@
+@media (max-width: 1250px) {
+  .vrtitm p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width:1200px) {
+  .prj {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .prjttl h2{
+    font-size: 3.5vh;
+  }
+
+  .prjnvbtn p {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .titletext {
+    width: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 3.5rem;
+    margin-bottom: 5vh !important;
+  }
+
+  .titlebtn {
+    width: 60% !important;
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+    height: 10vh !important;
+  }
+
+  .attribution {
+    font-size: 1.5rem !important;
+  }
+
+  /*
+  .aboutDiv {
+    height: auto !important;
+  }
+  */
+  .aboutself, .aboutservices, .container {
+    display: block !important;
+    /*height: auto !important;*/
+  }
+
+  .aboutservices {
+    height: auto !important;
+  }
+
+  .aboutself > *{
+    width: 90% !important;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto !important;
+  }
+
+  .aboutservices > *{
+    width: 90% !important;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto !important;
+  }
+
+  .accolades h2 {
+    margin-top: 10vh !important;
+  }
+
+  .indads {
+    flex-direction: column !important;
+    row-gap: 5vh;
+  }
+
+  .indads img {
+    width: 65vw !important;
+  }
+
+  .indads h3 {
+    font-size: 1.4rem;
+  }
+
+  .indads > div {
+    width: 65vw !important;
+  }
+
+  .indads p {
+    font-size: 1.2rem;
+  }
+
+  .acBtnDiv {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .acBtnDiv button {
+    height: 10vh !important;
+  }
+
+  .vrtitm {
+    width: 70vw !important;
+    margin-left: 15vw !important;
+    margin-right: 15vw !important;
+  }
+
+  .btndv {
+    width: 50vw !important;
+  }
+
+  .btndv button {
+    height: 7vh !important;
+  }
+
+  .vrtclcrsl {
+    row-gap: 3vh;
+  }
+
+  .vrtclcrsl p {
+    font-size: 1.1rem !important;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  #testimonials {
+  }
+
+  .d-block {
+    width: 100%;
+  }
+
+  #contact {
+  }
+
+  .contact {
+  }
+
+  .container > *{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .main__content * {
+    text-align: center;
+  }
+
+  .main__content {
+    margin-bottom: 5vh;
+  }
+
+  .form {
+    margin-bottom: 15vh !important;
+  }
+
+  .gif {
+    display: none;
+  }
+}
+
+@media (max-width:900px) {
+
+  .description p {
+    font-size: 1.75rem !important;
+  }
+
+  .prjttl h2{
+    font-size: 3vh;
+    margin-right: 5vh;
+  }
+
+  .prjnvbtn p {
+    font-size: 65%;
+    margin-left: 0;
+  }
+
+  .searchbar::placeholder {
+    font-size: 1vh;
+  }
+
+  .couFlag {
+    height:50vh !important;
+  }
+
+}
+
+@media (max-height: 700px) {
+  .vrtclcrsl p {
+    font-size: 1rem;
+  }
+
+  .glidertext p {
+    font-size: 1rem;
+    margin-left: 3vw;
+  }
+
+  .glidertext h1 {
+    margin-bottom: 2vh;
+  }
+}
+
+@media (max-width:600px) {
+  .prj {
+    grid-template-columns: 1fr;
+  }
+
+  .attribution {
+    font-size: 1rem !important;
+  }
+
+  .searchbar::placeholder {
+    font-size: 2vh;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .cont {
+    grid-template-rows: 1fr 1fr !important;
+  }
+
+  html, body {
+    width: 100vw;
+  }
+
+  .titleDiv h1 {
+    margin-top: 25vh !important;
+  }
+
+  .titlebtn {
+    width: 60% !important;
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+    height: 10vh !important;
+  }
+
+  .titletext {
+    font-size: 3rem;
+  }
+
+  .attribution {
+    font-size: 1.5rem !important;
+  }
+
+  .navbtns {
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .flex-column {
+    display: none;
+  }
+
+  .dropdown {
+    display: block !important;
+    width: 100vw;
+    background-color: black;
+    z-index: 10;
+  }
+
+  .dropbtn {
+    border-radius: 5px;
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    margin-left: 2vw;
+    background-color: black;
+    border: none;
+    color: white;
+  }
+
+  .dropbtn:focus {
+    outline: none;
+  }
+
+  .dropa {
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+
+  .reveala {
+    display: flex !important;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    display: none;
+  }
+
+  .btndv {
+    width: 100%;
+  }
+
+  .aboutself {
+    height: 100vh;
+  }
+
+  .linkedin {
+    flex-direction: column !important;
+    row-gap: 5vh !important;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    height: 200vh !important;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .left {
+    width: 80vw !important;
+  }
+
+  .me {
+    width: 75vw !important;
+    height: 50vh !important;
+  }
+
+  .workhr {
+    width: 50vw !important;
+  }
+
+  .right {
+    width: 80vw !important;
+  }
+
+  .workhd {
+    width: 75vw !important;
+  }
+
+  .vrtitm {
+    width: 80vw !important;
+    margin-left: 10vw !important;
+    margin-right: 10vw !important;
+  }
+
+  .glider-contain {
+    margin-top: 2vh!important;
+    height: 70vh !important;
+  }
+
+  .glider-contain h1 {
+    font-size: 2rem !important;
+  }
+
+  .glidertext {
+    margin-left: 1rem;
+  }
+
+  .glidertext p {
+    font-size: 1.5rem !important;
+    margin-left: 0 !important;
+  }
+
+  .d-block {
+    height: 40vh !important;
+  }
+
+  .glider {
+    height: auto;
+    height: 70vh !important;
+  }
+
+  .glider-item {
+    flex-direction: column;
+  }
+
+  .glidertext {
+    width: 100%;
+    margin-left: 0;
+    height: 40vh;
+  }
+
+  .glidertext * {
+    margin-left: 0;
+    margin-bottom: 5vh;
+  }
+
+  .glidertext h1 {
+    font-size: 3rem;
+  }
+
+  .glidertext p {
+    font-size: 1.5rem;
+    line-height: normal;
+  }
+
+  .d-block {
+    height: 40vh !important;
+    width: 100% !important;
+  }
+
+  .contact {
+    height: 120vh !important;
+  }
+
+  .form__text {
+    font-size: 0.73rem;
+  }
+
+  .footer {
+    font-size: 1rem;
+    margin-top: 20vh;
+  }
+
+  .prjnv {
+    display: none;
+  }
+
+  .searchbar {
+    display: none;
+  }
+
+  .prjttl {
+    column-gap: 5vw;
+  }
+
+  .prjttl h2 {
+    margin-left: 5vw;
+  }
+
+  .dropdownp {
+    display: inline-block !important;
+    width: 10%;
+    background-color: black;
+    margin-right: 2vw;
+    margin-left: auto;
+  }
+
+  .dropbtnp {
+    border: none;
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+  }
+
+  .dropbtnp:focus {
+    outline: none;
+  }
+
+  .prj {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .projectCard {
+  }
+
+  .reveal {
+    position: fixed;
+    top:10vh;
+    display: flex !important;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+
+  .dropap {
+    color: white;
+  }
+
+  .dropdownp:hover .dropap {
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+
+  .backbtn {
+    width: 16vh !important;
+  }
+
+  .couBtn {
+    width: 25vh !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .description p {
+    font-size: 1.25rem;
+  }
+
+  .vrtitm p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+}

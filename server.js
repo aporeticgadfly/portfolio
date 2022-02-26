@@ -34,7 +34,7 @@ else {
 }
 
 const allowedOrigins = ['https://www.santiagoorellana.com',
-                      'http://localhost:3000', 'https://santiagoorellana.herokuapp.com', 'https://santiagoorellana.com'];
+                      'http://localhost:3000', 'https://santiagoorellana.herokuapp.com', 'https://santiagoorellana.com', 'http://localhost:5002'];
 
 app.use(cors({
   origin: function(origin, callback){
@@ -115,8 +115,22 @@ app.get("/unsplash", function(req, res) {
     .catch(err => console.log(err));
 })
 
-app.get("/singleproject", function(req, res) {
-  res.sendFile(path.join(__dirname+process.env.SERVE_PATH));
+app.get("/singleproject/:id", function(req, res) {
+  Project.findById(req.params.id, function(err, project) {
+    if(err) {
+      console.log(err);
+    }
+    else {
+      let proj = {
+        _id: project._id,
+        title: project.title,
+        desc: project.description,
+        imageUrls: project.imageUrls,
+        link: project.link
+      };
+      res.send(proj);
+    }
+  })
 });
 
 app.get("/projectss", function(req, res){

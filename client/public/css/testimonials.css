@@ -1,0 +1,65 @@
+.testimonials {
+  height: 100vh;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+  #testimonials {
+  }
+
+  .testimonialsheader {
+    height: 5vh;
+    padding: 0;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  .glider-contain {
+    margin-top: 5vh !important;
+    height: 70vh !important;
+    width:90% !important;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+    .glider {
+      height: 100%;
+      width: 100%;
+    }
+
+    .glidebtn {
+      display: none;
+    }
+
+      .d-block {
+        height: 65vh !important;
+        border-radius: 7px;
+        width: 40% !important;
+      }
+
+      .glider-item {
+
+        display: flex;
+        flex-direction: row;
+      }
+
+      .glider-item > * {
+        width: 50%;
+      }
+
+      .glidertext {
+        margin-left: 4rem;
+      }
+
+        .glidertext * {
+          margin-bottom: 15vh;
+          line-height: 4rem;
+        }
+
+        .glidertext p {
+          font-size: 2rem;
+          margin-left:3rem;
+          font-family: 'Arial', sans-serif;
+        }
+  .glider-dots {
+    height: 6vh;
+  }

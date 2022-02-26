@@ -1,0 +1,80 @@
+.sprojback {
+  background-color: #111111;
+  min-height: 100vw;
+}
+
+.cont {
+  width:95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  height: auto;
+}
+
+.rightDiv {
+  margin-left: 12.5%;
+}
+
+.couFlag {
+  width:75%;
+  margin-right: 12.5%;
+  margin-left: 12.5%;
+  height:100%;
+}
+
+.couDetails {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0rem;
+  color: white;
+}
+
+.firstp {
+  margin-top: 3vh;
+  width: 65vw;
+}
+
+.backbtn {
+  border: solid;
+  border-color: white;
+  background-color: hsl(0, 0%, 100%);
+  width:8vh;
+  padding-top:0.5rem;
+  padding-bottom:0.5rem;
+  border-radius: 3px;
+  margin-left: 2.5%;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  color: black;
+}
+
+.backbtn:hover {
+  background-color: #000000;
+  border-color: white;
+  color: white;
+}
+
+.couBtn {
+  border: solid;
+  border-color: white;
+  background-color: hsl(0, 0%, 100%);
+  width:18vh;
+  padding-top:0.5rem;
+  padding-bottom:0.5rem;
+  border-radius: 3px;
+  margin-top: 1.5vh;
+  color: black;
+}
+
+.couBtn:hover {
+  background-color: #000000;
+  border-color: white;
+  color: white;
+}
+
+
+.fa-arrow-left {
+  margin-right: 0.7rem;
+  font-size: 1.5vh;
+}

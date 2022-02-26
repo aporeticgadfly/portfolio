@@ -1,0 +1,121 @@
+.titleDiv {
+  height: 95vh;
+  width: 100vw;
+}
+
+#name {
+  margin-top:35vh;
+}
+
+.header {
+  margin: 0;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.titletext {
+  color:white;
+  animation: fadeInUp 2.5s;
+  margin-left: 40vw;
+  width:20vw;
+  margin-right:40vw;
+  text-align:center;
+  font-family: 'Ubuntu', sans-serif;
+ }
+
+.titlebtn {
+  margin-left: 45vw;
+  animation: fadeInUp 2.5s;
+  width:10vw;
+  margin-right: 45vw;
+  margin-top: 2rem;
+  background-color: transparent;
+  color: white;
+  border: 2px solid;
+  border-radius: 6px;
+  height: 5vh;
+  font-size: 1.5rem;
+ }
+
+ .titlebtn:hover {
+   background-color: white;
+   border-color: white;
+   color: black;
+ }
+
+ @keyframes fadeInUp {
+   from {
+     opacity: 0;
+     -webkit-transform: translate3d(0, 100%, 0);
+     transform: translate3d(0, 100%, 0);
+   }
+
+   to {
+     opacity: 1;
+     -webkit-transform: translate3d(0, 0, 0);
+     transform: translate3d(0, 0, 0);
+   }
+ }
+
+ @keyframes fadeIn {
+   from {
+     opacity: 0;
+   }
+
+   to {
+     opacity: 1;
+   }
+ }
+
+nav * {
+  border: none;
+  width: 20%;
+}
+
+nav {
+  position: relative;
+  width:100vw;
+  z-index:10;
+  height:5vh;
+}
+
+.dropdown {
+  display: none;
+}
+
+.dropdown-content hr {
+  background-color: white;
+  width: 100%;
+  margin: 0;
+  height: 0.25vh;
+}
+
+.progress-container {
+  width: 100%;
+  height: 1vh;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 1vh;
+  background-color: #5eb3ce;
+  width: 0%;
+}
+
+.coloured {
+  color: #5eb3ce !important;
+}
+
+.fixed-header {
+  position: fixed;
+  top:0rem;
+}
+
+nav button {
+  height: 5vh;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-family: 'Helvetica', serif;
+}

@@ -72,7 +72,7 @@ class App extends React.Component {
         err => console.log(err)
       );
 
-    axios.get(window.location.href+'projectss')
+    axios.get(configData.SERVER_URL+'/projectss')
     .then(
       res => {
         this.setState({proj: this.state.proj.concat(res.data)});
@@ -91,7 +91,7 @@ class App extends React.Component {
     if(proj !== 0) {
       return(
         <div className="projectCard" key = {this.state.proj[proj]._id}>
-          <Link to= "/singleproject" style={{textDecoration: "none"}}>
+          <Link to= {"/singleproject/"+this.state.proj[proj]._id} style={{textDecoration: "none"}}>
             <Proj
               key = {this.state.proj[proj]._id}
               id = {this.state.proj[proj]._id}
@@ -107,7 +107,6 @@ class App extends React.Component {
   }
 
   projectClick(projectClicked, e) {
-    console.log(projectClicked);
     this.setState({projectToRender:projectClicked});
   }
 
@@ -119,6 +118,16 @@ class App extends React.Component {
         var projClicked = this.state.proj[y];
         break;
       }
+    }
+
+    if(projClicked === undefined) {
+      projClicked = {
+        _id: '',
+        imageUrls: '',
+        desc: '',
+        title: '',
+        link: ''
+      };
     }
 
     return(
@@ -178,7 +187,7 @@ class App extends React.Component {
           </div>
         </div>
       </Route>
-      <Route path="/singleproject">
+      <Route path="/singleproject/:id">
         {this.createSingleProject}
       </Route>
       <Route path="/authenticate">

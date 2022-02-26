@@ -1,4 +1,6 @@
 import React from 'react';
+import NavProgress from './NavProgress';
+import WorkHd from './WorkHd';
 
 class About extends React.Component {
   constructor(props) {
@@ -16,15 +18,6 @@ class About extends React.Component {
         color: "black",
         border: "none"
       },
-      vstate: {
-        display: "none"
-      },
-      fstate: {
-        display: "none"
-      },
-      istate: {
-        display: "none"
-      },
       spin: {
         animation: "none"
       },
@@ -35,27 +28,7 @@ class About extends React.Component {
     this.linkedin = this.linkedin.bind(this);
     this.click = this.click.bind(this);
     this.github = this.github.bind(this);
-    this.vhover = this.vhover.bind(this);
-    this.fhover = this.fhover.bind(this);
-    this.ihover = this.ihover.bind(this);
-    this.out = this.out.bind(this);
     window.self = this;
-  }
-
-  vhover() {
-    this.setState({vstate: {display: "block"}});
-  }
-
-  fhover() {
-    this.setState({fstate: {display: "block"}});
-  }
-
-  ihover() {
-    this.setState({istate: {display: "block"}});
-  }
-
-  out() {
-    this.setState({vstate: {display: "none"}, fstate: {display: "none"}, istate: {display: "none"}});
   }
 
   ftClicked() {
@@ -110,56 +83,20 @@ class About extends React.Component {
       var topPos = element.getBoundingClientRect().top;
 
       if(topPos <= 0) {
-        document.querySelector(".flex-column").classList.add("fixed-header");
+        document.querySelector(".fixed").classList.add("fixed-header");
       }
 
       if(document.querySelector(".aboutsection").getBoundingClientRect().top >= 130){
-        document.querySelector(".flex-column").classList.remove("fixed-header");
+        document.querySelector(".fixed").classList.remove("fixed-header");
       }
 
     }
-
-    var count = 0;
-    document.querySelector(".dropdown").addEventListener("click", function () {
-      if(count === 0) {
-        document.querySelector(".dropdown-content").classList.add("reveala");
-        count = 1;
-      }
-      else if (count === 1) {
-        document.querySelector(".dropdown-content").classList.remove("reveala");
-        count = 0;
-      }
-    });
 }
 
   render() {
     return (
       <div>
-        <nav className="flex-column">
-          <a href="#home"><button className="navbtns hmbtn" >Home</button></a>
-          <a href="#about"><button className="navbtns abtbtn" >About</button></a>
-          <a href="#testimonials"><button className="navbtns tstbtn" >Testimonials</button></a>
-          <a href="#contact"><button className="navbtns cntctbtn" >Contact</button></a>
-          <a href="/projects"><button className="navbtns prtbtn" >Portfolio</button></a>
-          <div className="dropdown">
-            <button className="dropbtn"><i className="fas fa-bars"></i></button>
-            <div className="dropdown-content">
-              <hr />
-              <a className="dropa" href="#home">Home</a>
-              <hr />
-              <a className="dropa" href="#about">About</a>
-              <hr />
-              <a className="dropa" href="#testimonials">Testimonials</a>
-              <hr />
-              <a className="dropa" href="#contact">Contact</a>
-              <hr />
-              <a className="dropa" href="/projects">Portfolio</a>
-            </div>
-          </div>
-          <div className="progress-container">
-            <div className="progress-bar coloured" id="myBar" ></div>
-          </div>
-        </nav>
+        <NavProgress />
         <div className="aboutDiv">
         <a className="none" href="/home#about" id="about">text</a>
         <h1 className="header aboutheader">About</h1>
@@ -172,11 +109,15 @@ class About extends React.Component {
               <p>I've taught myself to code in 11+ programming languages fluently, and have utilized some of them to build web applications for businesses and individuals alike.</p>
               <a href="#contact">Let's create something together.</a>
             </div>
-            <div><img alt="" className="gif" src={require("../images/coding.gif")} data-aos="fade-right" data-aos-duration="3000"/></div>
+            <div><img alt="A gif of running code" className="gif" src={require("../images/coding.gif")} data-aos="fade-right" data-aos-duration="3000"/></div>
           </div>
           <div className="linkedin full">
             <div className="left"  data-aos="fade-right" data-aos-duration="3000">
-              <img alt="" src={require("../images/placeholder.jpeg")} className="me"/>
+              <div className="headdv mobile">
+                <h2>Work Experience</h2>
+                <hr className="workhr" />
+              </div>
+              <img alt="A picture of Santiago" src={require("../images/placeholder.jpeg")} className="me"/>
               <div className="buttonDiv">
                 <button className="linkedbtn" onClick={this.linkedin}>
                   <i className="fab fa-linkedin"></i>
@@ -187,51 +128,31 @@ class About extends React.Component {
               </div>
             </div>
             <div className="right" data-aos="fade-left" data-aos-duration="3000">
-              <div className="headdv">
+              <div className="headdv desktop">
                 <h2>Work Experience</h2>
                 <hr className="workhr" />
               </div>
-              <div className="workhd" onMouseOver={this.vhover} onMouseOut={this.out}>
-                <div className="hdr">
-                  <div>
-                    <h3>Software Engineer</h3>
-                    <h4>Vodra</h4>
-                  </div>
-                  <i className="fas fa-sort-down" style={this.state.spin}></i>
-                </div>
-                <div className="ps" style={this.state.vstate}>
-                  <p>• React, TypeScript, and Firebase software development for a cryptocurrency based startup.</p>
-                  <p>• Implemented bidirectional full-duplex streaming functionality between server and client using WebSockets.</p>
-                </div>
-              </div>
-              <div className="workhd" style={this.fstate} onMouseOver={this.fhover} onMouseOut={this.out}>
-                <div className="hdr">
-                  <div>
-                    <h3>Freelance Software Engineer</h3>
-                    <h4>Self-Employed</h4>
-                  </div>
-                  <i className="fas fa-sort-down" style={this.state.spin}></i>
-                </div>
-                <div className="ps" style={this.state.fstate}>
-                  <p>• Developed dynamic, responsive, scalable web applications for clients and small businesses for two years.</p>
-                  <p>• Languages and frameworks used include HTML, CSS, JavaScript, Node, Express, MongoDB, MySQL, CockroachDB, Python, Ruby on Rails, React, and jQuery.</p>
-                  <p>• Developed over 30 practice projects and 20+ real world projects for clients, some of which are displayed on my portfolio.</p>
-                </div>
-              </div>
-              <div className="workhd" style={this.istate} onMouseOver={this.ihover} onMouseOut={this.out}>
-                <div className="hdr">
-                  <div>
-                    <h3>Robotics Instructor</h3>
-                    <h4>Institute of Robotics and Intelligent Systems</h4>
-                  </div>
-                  <i className="fas fa-sort-down" style={this.state.spin}></i>
-                </div>
-                <div className="ps" style={this.state.istate}>
-                  <p>• Taught and developed curricula relating to hardware and software engineering principles to people of all ages for two years.</p>
-                  <p>• Courses developed include frontend web development, game design, microcontroller/robotics programming with Arduino and Raspberry
-                  Pi, ROBOTC, Android development with Java, and Python programming.</p>
-                </div>
-              </div>
+              <WorkHd
+                jobtitle="Software Engineer"
+                company="Vodra"
+                firstp="• React, TypeScript, and Firebase software development for a cryptocurrency based startup."
+                secondp="• Implemented bidirectional full-duplex streaming functionality between server and client using WebSockets."
+                thirdp="• Worked as part of a software development team, communicating updates and adhering to timelines."
+              />
+              <WorkHd
+                jobtitle="Freelance Software Engineer"
+                company="Self-Employed"
+                firstp="• Developed dynamic, responsive, scalable web applications for clients and small businesses for two years."
+                secondp="• Languages and frameworks used include HTML, CSS, JavaScript, Node, Express, MongoDB, MySQL, CockroachDB, Python, Ruby on Rails, React, and jQuery."
+                thirdp="• Developed over 30 practice projects and 20+ real world projects for clients, some of which are displayed on my portfolio."
+              />
+              <WorkHd
+                jobtitle="Robotics Instructor"
+                company="Institute of Robotics and Intelligent Systems"
+                firstp="• Taught and developed curricula relating to hardware and software engineering principles to people of all ages for two years."
+                secondp="• Taught eight courses, six of which were self-developed."
+                thirdp="• Courses developed include frontend web development, game design, microcontroller/robotics programming with Arduino and Raspberry Pi, ROBOTC, Android development with Java, and Python programming."
+              />
             </div>
           </div>
           <div className="accolades full">
